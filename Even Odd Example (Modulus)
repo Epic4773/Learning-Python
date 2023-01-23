@@ -1,0 +1,13 @@
+# This example will ask the user for a number, and depending on whether the numbner is even or odd, it will print an appropriate message
+
+print(4%2) # Modulus returns the remainder
+print(9%2) # For any even num, num%2=0
+print(' ')
+
+num = int(input('Please type your number: '))
+mod =  num%2
+
+if mod > 0 : # "if" is a conditional.
+  print('You picked an odd number')
+else:
+  print('You picked an even number')
