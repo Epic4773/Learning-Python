@@ -1,0 +1,9 @@
+name = input('What is your name? ')
+age = int(input('How old are you? '))
+year = 2022 - age + 100
+print(name+', you will be 100 years old in the year '+str(year))
+print(' ')
+name = input('What is your name? ')
+birth = int(input('When were you born? '))
+year = 2022 - birth
+print(name+', your age is '+str(year))
