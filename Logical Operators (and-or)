@@ -1,0 +1,24 @@
+x = 2
+
+# and returns true if BOTH statements are true.
+print('Ex 1) and')
+print(' ')
+print ('True and True:')
+print(x > 1 and x < 3)
+print('True and False')
+print(x > 2 and x > 5)
+print(' ')
+
+# returns True if at least one of the statements are true.
+print('Ex 2) or')
+print('True or False:')
+print(x > 1 or x < 3)
+print('True or True:')
+print(x > 1 or x > 3)
+print('False or False:')
+print(x > 60 or x != 2)
+
+# reverses the results
+print('Ex 3) not')
+print('not(True)')
+print(not (x > 1))
