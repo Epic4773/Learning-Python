@@ -1,0 +1,22 @@
+string = 'Password'
+# general syntax: string [start:end:step]
+
+# get the 0th index of string
+print('Ex 1) '+string[0])
+
+print('Ex 2) '+string[7])
+
+# starts at index 2 and goes to the last character/index
+print('Ex 3) '+string[2:])
+
+# string[string:end] will go from start to end-1
+print('Ex 4) '+string[2:5])
+
+print('Ex 5) '+string[:6])
+
+print('Ex 6) '+string.lower())
+
+print('Ex 7) '+string.upper())
+
+# starts at 1, goes to the end, and steps by 2 (takes every other character). If nothing is given for step, step defaults to 1.
+print('Ex 8) '+string[1::2])
