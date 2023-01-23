@@ -1,0 +1,10 @@
+print('Hello!')
+print(' ')
+
+age = int(input('What is your age? '))
+if age >= 18 : 
+  print('User can see R-rate movies')
+if age < 18 and age > 12 : 
+  print('User can see PG-13 movies')
+if age <= 12 : 
+  print('User can only see PG movies')
