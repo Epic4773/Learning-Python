@@ -1,0 +1,13 @@
+# The String Split method cuts up a string into smaller strings, and it cuts where you tell it to cut based on what you input
+string1 = 'Computer Science'
+word1, word2 = string1.split(' ')
+# In Python, we can assign multiple variables at once like word1 and word2 above.
+print(word1)
+print(word2)
+print(' ')
+
+string2 = 'Cat, Dog, Bird'
+cat, dog, bird = string2.split(', ')
+print(cat)
+print(dog)
+print(bird)
