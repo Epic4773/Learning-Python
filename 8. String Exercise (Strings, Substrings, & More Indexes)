@@ -1,0 +1,42 @@
+## Exercise -- Strings and Substrings
+
+string1 = 'ComputerScience Period 2'
+string2 = 'is Awesome'
+
+# These strings are the ONLY variables you are allowed to use. You must complete the following examples using these strings and slices of these strings. You may not create any other variables or print any other text outside of what you use from string1 and string2.
+# * Case Matters!
+# ** If it says "one slice" you may only write ONE SLICE
+# *** CHALLENGE: Write each solution in the most SIMPLE way possible
+
+# Ex 1
+# write and print one string slice that will output:  'puter'
+print('Ex 1) ' + string1[3:8])
+
+# Ex 2
+# write and print one string slice that will output:  'Computer'
+print('Ex 2) ' + string1[0:8])
+
+#Ex 3
+# write and print one string slice that will output:  'Science'
+print('Ex 3) ' + string1[8:15])
+
+# Ex 4
+# write and print one string slice that will output:  'Period 2'
+print('Ex 4) ' + string1[16:24])
+
+# Ex 5
+# write and print one string slice that will output:  'CmueSinePro '
+print('Ex 5) ' + string1[0::2])
+
+# Ex 6
+# write and print one string slice that will output:  'tSeeeo'
+print('Ex 6) ' + string1[5:21:3])
+ 
+# Ex 7
+# write and print one string slice that will output:  'computer science'
+print('Ex 7) ' + string1.lower()[0:15])
+
+# Ex 8
+# Combine both string1 and string2 to print:  'COMPUTERSCIENCE IS AWESOME'
+# you may create a new variable here if you prefer
+print('Ex 8) ' + string1.upper() + ' ' + string2.upper())
