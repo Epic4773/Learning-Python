@@ -1,0 +1,45 @@
+a = 4 # '=' is assigning a value to a, b, and c
+b = 4
+c = 3
+
+# '==' is a comparison operator
+# '==' tests whether or not two variables have the same value'
+# If they have the same value, == returns True
+# If they don't, == returns False
+# That is, == returns a Boolean (True/False)
+print('Ex 1) -- operator')
+print(a == b)
+print(a == c)
+print(' ')
+
+print('Ex 2) != or not equal')
+print(a != b)
+print(a != c)
+print(' ')
+
+print('Ex 3) > or greater than')
+print(a > 3)
+print(a > b)
+print(' ')
+
+print('Ex 4) < or less than')
+print(c < a)
+print(a < b)
+print(' ')
+
+print('Ex 5) >= or greater than or equal to')
+print(a >= c)
+print(a >- b)
+print(' ')
+
+print('Ex 6) >= or less than or equal to')
+print(c >= a)
+print(a >- b)
+print(a >- c)
+print(' ')
+
+print('8/9/22 Bell Ringer')
+print(3 != 3)
+print('Dog' == 'Cat')
+print(4.0 >= 4)
+print('computer' == 'computer')
