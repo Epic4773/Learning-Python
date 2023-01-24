@@ -1,0 +1,73 @@
+# DIRECTIONS: For each prompt, read the task and then write your code below the prompt that accomplishes the written task.
+
+# 1) Use a for loop to print the numbers from 1 to 20, inclusive.
+print('Exercise #1')
+for x in range(1,21):
+  print(x)
+print(' ')
+
+# 2) Use the third argument of the range() function to print all the odd numbers from 1 - 41, inclusive.
+print('Exercise #2')
+for x in range(1,42,2):
+  print(x)
+print(' ')
+
+# 3) Use a for loop and the range() function to print the multiples of 3 from 3 to 30.
+print('Exercise #3')
+for x in range(3,31,3):
+  print(x)
+print(' ')
+
+# 4) A number raised to the third power is called a cube. (Remember: The cube of 2 is written as 2**3 in Python.). Use a for loop and the range() function to print the first 10 cubes (the cubes of the numbers 1 - 10).
+print('Exercise #4')
+for x in range(1,11):
+  power = 3**x
+  if x == 1:
+    print(f'The 1st power of 3 is: {power}')
+  elif x == 2:
+    print(f'The 2nd power of 3 is: {power}')
+  elif x == 3:
+    print(f'The 3rd power of 3 is: {power}')
+  else:
+    print(f'The {x}th power of 3 is: {power}') 
+print(' ')
+
+# 5) Use a List Comprehension to generate a list of the first 10 cubes and print your entire list.
+print('Exercise #5')
+powers = [3**x for x in range(1,11)]
+print(powers)
+print(' ')
+
+# 6) Use a for loop and the range function to print the first 10 powers of 2 (2*1 through 2*10).
+print('Exercise #6')
+for x in range(1,11):
+  power = 2**x
+  print(f'2 to the power of {x} is: {power}') 
+print(' ')
+
+# 7) Use a for loop and the range function to print the first 10 perfect square numbers (25 is a perfect square because 5*5 is 25).
+print('Exercise #7')
+perfect = [x*x for x in range(1,11)]
+print(perfect)
+print(' ')
+
+#8) Use a for loop and the range function to print all the multiples of 4 between 16 and 80.
+print('Exercise #8')
+for x in range(16,81,4):
+  print(x)
+print(' ')
+
+#9) Challenge: Use for loop(s) and the range function to create a list of all of the prime numbers between 1 and 100. You should NOT just add numbers to your list that you know are prime — make sure you have test(s) in your loops to check if a number is prime and then add it to your list. The code you write should be general and should work for any range of positive integers. That is, I should be able to easily tweak your code and generate a list of the first thousand prime numbers, or the first ten thousand, etc. Reminder: The only factors of a prime number are 1 and that number. 1 is not a prime number. Hint: You may need to use nested for loops. That is, a for loop within a for loop. If you do that, be sure to use different local variable names in your nested loops.
+print('Exercise #9')
+primes = []
+for x in range(1,101):
+  prime = True
+  if x == 1:
+    prime = False
+  else:
+    for y in range(2,x):
+      if x%y == 0 :
+        prime = False
+  if prime:
+    primes.append(x)
+print(primes)
