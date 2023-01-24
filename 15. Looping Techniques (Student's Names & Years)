@@ -1,0 +1,26 @@
+print(names)
+print( )
+# We can loop through our list by elements
+for name in names:
+  print(name)
+print( )
+# Len() will return the number of elements in a list
+print(f'The number of elements in our list in {len(names)}')
+print( )
+# Looping through range(x) will loop trhough indices 0 through x - 1.
+for i in range(10):
+  print(i)
+print( )
+# Loop throug our List by index
+for i in range(len(names)):
+  print(names[i])
+print( )
+years = [2007,2007,2006,2006,2004,2006,2005,2004,2006]
+# Loop by using a List Comprehension
+ages = [2022 - year for year in years]
+print(ages)
+print( )
+
+for i in range(len(names)):
+  # Format and print a sentence that says "student is a years old" for each student.
+  print(f'{names[i]} is {ages[i]} years old.')
