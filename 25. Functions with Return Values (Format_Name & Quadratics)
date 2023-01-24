@@ -1,0 +1,38 @@
+def format_name(first, last, middle=''):
+  if middle:
+    full_name = f'{first} {middle} {last}'
+  else:
+    full_name = f'{first} {last}'
+  return full_name.title()
+
+name = format_name('Daniel','Kolbin','MiddleName')
+print(name)
+print()
+
+name2 = format_name('jimi','hendrix')
+print(name2)
+print()
+
+# Write a function to return the output value of the quadratic f(x)=3x^2+7x-4
+def quadratic(x):
+  out = 3*x**2+7*x-4
+  return out
+
+print(quadratic(-6))
+print(quadratic(-2))
+print(quadratic(6))
+print()
+print('Try It Yourself:')
+
+def format_name2(first, last, middle='', courtesy=''):
+  if middle and courtesy:
+    full_name2 = f'{courtesy} {first} {middle} {last}'
+  elif middle:
+    full_name2 = f'{first} {middle} {last}'
+  else:
+    full_name2 = f'{first} {last}'
+  return full_name2.title()
+print()
+
+name = (format_name2('Daniel','Kolbin','MiddleName','Mr'))
+print(name)
