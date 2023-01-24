@@ -3,15 +3,15 @@
 # a) Spring b) Summer c) Autumn d) Winter e) Undecided
 
 poll_data = {
-  'Connor' : '',
+  'Connor' : 'Summer',
   'Daniel K' : 'Undecided',
-  'Kaden' : '',
-  'Lydia' : '',
+  'Kaden' : 'Autumn',
+  'Lydia' : 'Spring',
   'Mitch' : '',
   'Nick' : '',
-  'Preston' : '',
+  'Preston' : 'Autumn',
   'Qingbo' : '',
-  'Rohan' : '',
+  'Rohan' : 'Winter',
   'Daniel W' : '',
   'Anatoliy' : 'Autumn',
   'Yelena' : 'Autumn',
@@ -27,9 +27,12 @@ total_Autumn = 0
 total_Winter = 0
 total_Undecided = 0
 
-print('The following people have answered my poll question: ')
+print('Results: \n')
 for person in poll_data.keys():
-    print(f'{person} has answered the poll')
+    if(len(poll_data[person]) == 0):
+      print(f'{person} has not answered the poll')
+    else:
+      print(f'{person} has answered the poll')
 print(' ')
 
 for season in poll_data.values():
