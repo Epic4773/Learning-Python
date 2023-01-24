@@ -1,0 +1,32 @@
+# While loops continue looping while the given condition is True. Be careful with infinite loops!
+current_number = 1
+while current_number <=5 :
+  print(current_number)
+  current_number += 1
+print(' ')
+
+prompt = 'Tell me something and I will repeat it back to you.'
+prompt += '\nEnter quit to end the program.\n'
+answer = ''
+# This loop will run over and over again until the user enters 'quit'.
+while answer != 'quit' :
+  answer = input(prompt)
+  if answer != 'quit' :
+    print(answer)
+print(' ')
+  # Do the same thing, but with a flag.
+flag = True
+while flag :
+  answer = input(prompt)
+  if answer == 'quit' :
+    flag = False
+  else :
+    print(answer)
+print(' ')
+# Do the same thing, but with a break statement, The break keyword will make ANY loop stop.
+while True :
+  answer = input(prompt)
+  if answer == 'quit' :
+    break
+  else :
+    print(answer)
