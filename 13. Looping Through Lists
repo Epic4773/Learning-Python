@@ -1,0 +1,23 @@
+a = [17, 2, 74, 35, 98, 61, 22, 18, 43, 11]
+a.sort()
+print(a)
+print(a[::-1])
+print(a)
+a.reverse()
+print(a)
+a.sort()
+print(a)
+print( )
+print('Print the elements of "a" individually:  ')
+for element in a :
+  print(element)
+print('Print only the elements of "a" that are even:  ')
+for x in a :
+  if x%2 == 0:
+    print(x)
+# Initialize a new empty list b and put only the even elemnts from list a into b
+b = []
+for num in a :
+  if num%2 == 0:
+    b.append(num)
+print(b)
