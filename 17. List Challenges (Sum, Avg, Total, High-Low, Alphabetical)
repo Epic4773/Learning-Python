@@ -1,0 +1,53 @@
+# Directions: Use "num_list" and "sentence" respectively to complete the challenges in this assignment. Use for loops to complete the challenges, and write tour code and output below each challenge prompt.
+# ***Format the output (print statement) of your answer so that it is nice and readable! We've been using the f' ' method in class to do that lately.
+
+num_list = [73, 12, 84, -17, 46, 0, 11, 59, -42, 13, 4, 33, 90, 102, 0, -77, -35, 26, 27, 45, 19, 0, 88, -8, 61]
+
+# Challenge 1 -- Find the sum of all numbers in num_list and print the sum.
+total = 0
+for num in num_list:
+  total += num
+print(f'The sum of all the numbers in num_list is {total}.')
+print( )
+
+# Challenge 2 -- Find the average value of all the numbers in num_list and print the average value.
+total = 0
+for num in num_list:
+  total += num
+  l = len(num_list)
+average = total/len(num_list)
+print(f'The average of all numbers in num_list is {average}.')
+print( )
+
+# Challenge 3 -- Count the # of even integers and the # of odd integers in num_list. Print the total number of even and odd integers.
+even_count = 0
+odd_count = 0
+for num in num_list:
+  if num != 0 and num%2 == 0:
+    even_count += 1
+  elif num%2 != 0:
+    odd_count +=1
+print(f'The number of even integers is {even_count}.')
+print(f'The number of odd integers is {odd_count}.')
+print( )
+
+# Challenge 4 --  Find and print out the highest and lowest values in num_list.
+lowest = num_list[0]
+highest = num_list[0]
+for num in num_list:
+  if num < lowest:
+    lowest = num
+    if num > highest:
+      highest = num
+print(f'The highest number is {highest}.')
+print(f'The lowest number is {lowest}.')
+print( )
+
+sentence = "The quick brown fox jumped over the lazy dog."
+# Challenge 5 -- Write a for loop that takes the above sentence and prints out all of the words in the sentence in alphabetical order. Bonus: Can you write a generic loop that accepts a sentence from user input and will work for ANY sentence the user might type?
+sentence = sentence.lower()
+sentence = sentence.replace('.','')
+word_list = sentence.split()
+word_list.sort()
+for word in word_list:
+  print(word)
