@@ -2,7 +2,6 @@
 # The options are . . .
 # a) Mercury b) Venus c) Mars d) Jupiter e) Saturn f) Uranus g) Neptune
 
-space = ''
 poll_data = {
   'Connor' : '',
   'Daniel K' : 'Mars',
