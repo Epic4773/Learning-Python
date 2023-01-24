@@ -1,0 +1,37 @@
+def greet_user():
+  # This function will display a simple greeting.
+  print('Welcome, User!')
+
+# Calling the function
+greet_user()
+greet_user()
+greet_user()
+print()
+
+# Add a perameter
+def greet_user2(username):
+  # Display a greeting using the user's name
+  message = f'Welcome, fellow {username}!'
+  print(message)
+
+# Call greet_user2() and give it an argument to be passed along to the username parameter.
+greet_user2('Kaden')
+greet_user2('Qingbo')
+greet_user2('Mitch')
+
+# "Greet_user" is a funcation name, "username" is a parameter or an argument.
+
+print()
+print('——————————————————————————————')
+print()
+print('Exercise #1')
+def explain_functions():
+  print('Functions are all about inputs and outputs. In code, it makes performing tasks much easier than things like printing literally every line out word for word.')
+explain_functions()
+print()
+
+print('Exercise #2')
+def favorite_book(title):
+  message = f'My favorite book series was {title} by Erin Hunter.'
+  print(message)
+favorite_book('Warriors')
