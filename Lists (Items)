@@ -1,0 +1,46 @@
+items = []
+# This initializes items as an empty list
+print(items)
+# The append method adds to the end of our list
+items.append('eggs')
+print(items)
+items.append('milk')
+items.append('eggnog')
+items.append('sparkling ice')
+items.append('yogurt')
+items.append('choclate muffins')
+items.append('apples')
+items.append('chicken')
+items.append('spaghetti')
+print(items)
+print(items[1])
+# Index -1 will give the LAST element in a list
+print(items[-1])
+# Insert accepts an index and an element, and inserts that element into our list at that index. Elements after that index gets pushed down an index.
+items.insert(1,'cereal')
+print(items)
+# Deletes element at that index
+del items[3]
+print(items)
+#Change element at index 1
+items[1] = 'Mini Wheats'
+print(items)
+# Remove method removes a specific value
+no_meat = 'chicken'
+items.remove(no_meat)
+print(items)
+
+# Pop gets the last item in a list and removes
+last_item = items.pop()
+print(last_item)
+print(items)
+print('--------------------------')
+items2 = ['donuts','apples','eggs','carrots','bananas']
+# Sorted function returns an alphabetized list
+print(sorted(items2))
+print(items2)
+# Sort method alphabetizes our list
+items2.sort()
+print(items2)
+items2.reverse()
+print(f'The last item on our list is {items2[-1]}.')
