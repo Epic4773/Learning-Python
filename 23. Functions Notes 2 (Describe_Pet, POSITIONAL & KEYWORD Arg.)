@@ -1,0 +1,38 @@
+# Write a function with multiple parameters.
+def describe_pet(type, name):
+  # display information about a pet
+  print(f"I have a {type}.")
+  print(f"My {type}'s name is {name}.")
+
+describe_pet("Dog","Mueller")
+describe_pet("Hamster","Harry")
+describe_pet("Harry","Hamster")
+# These are POSITIONAL arguments, and their order matters when we call the function.
+
+# We can also call our function with KEYWORD arguments.
+describe_pet(type="Hamster",name="Barry")
+describe_pet(name="Larry",type="Lobster")
+# We can change the order of Keyword arguments
+
+# What if we want a default value for the pet type?
+# In Python, parameters without default values need to be listed first when we define the function.
+def describe_pet2(name, type='dog'):
+  # display information about a pet
+  print(f"I have a {type}.")
+  print(f"My {type}'s name is {name}.")
+
+describe_pet2(name='Willie')
+describe_pet2('Willie')
+describe_pet2('Bob','Bird')
+describe_pet2(type='cat',name='Annabelle')
+
+# If we want, we can give both parameters default values
+def describe_pet3(type='dog',name='Charles'):
+  # display information about a pet
+  print(f"I have a {type}.")
+  print(f"My {type}'s name is {name}.")
+
+describe_pet3()
+describe_pet3('Hamster','Harry')
+describe_pet3('Harry','Hamster')
+describe_pet3(name='Harry',type='Hamster')
