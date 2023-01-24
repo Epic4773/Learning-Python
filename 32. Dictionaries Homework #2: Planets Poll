@@ -2,6 +2,7 @@
 # The options are . . .
 # a) Mercury b) Venus c) Mars d) Jupiter e) Saturn f) Uranus g) Neptune
 
+space = ''
 poll_data = {
   'Connor' : '',
   'Daniel K' : 'Mars',
@@ -29,9 +30,12 @@ total_Saturn = 0
 total_Uranus = 0
 total_Neptune = 0
 
-print('The following people have answered my poll question: ')
+print('Results: \n')
 for person in poll_data.keys():
-    print(f'{person} has answered the poll')
+    if(len(poll_data[person]) == 0):
+      print(f'{person} has not answered the poll')
+    else:
+      print(f'{person} has answered the poll')
 print(' ')
 
 for planet in poll_data.values():
