@@ -1,0 +1,76 @@
+cities = {
+  'Georgetown' : {
+    'State' : 'Indiana',
+    'Country' : 'United States',
+    'Population' : '3,805',
+    'Mayor' : 'Carol Jayroe',
+    'Area' : '2.193 mi²',
+    'Established' : '1833 AD',
+  },
+  'Jeffersonville' : {
+    'State' : 'Indiana',
+    'Country' : 'United States',
+    'Population' : '49,447',
+    'Mayor' : 'Mike Moore',
+    'Area' : '34.35 mi²',
+    'Established' : '1786 AD',
+  },
+  'Buffalo' : {
+    'State' : 'New York',
+    'Country' : 'United States',
+    'Population' : '278,349',
+    'Mayor' : 'Byron Brown',
+    'Area' : '52.51 mi²',
+    'Established' : '1801 AD',
+  },
+  'Minsk' : {
+    'State' : 'Minsk',
+    'Country' : 'Belarus',
+    'Population' : '1,996,553',
+    'Mayor' : 'Vladímir Kujarev',
+    'Area' : '134.7 mi²',
+    'Established' : '1067 AD',
+  },
+  'Kyiv' : {
+    'State' : 'Kyiv',
+    'Country' : 'Ukraine',
+    'Population' : '2,962,180',
+    'Mayor' : 'Vitali Klitschko',
+    'Area' : '323.9 mi²',
+    'Established' : '482 AD',
+  },
+  'Moscow' : {
+    'State' : 'Moscow',
+    'Country' : 'Russia',
+    'Population' : '13,010,112',
+    'Mayor' : 'Sergey Sobyanin',
+    'Area' : '970 mi²',
+    'Established' : '1147 AD',
+  },
+  'Marl' : {
+    'State' : 'North Rhine-Westphalia',
+    'Country' : 'Germany',
+    'Population' : '83,697',
+    'Mayor' : 'Werner Arndt',
+    'Area' : '33.86 mi²',
+    'Established' : '1936 AD',
+  },
+  'Perth' : {
+    'State' : 'Western Australia',
+    'Country' : 'Australia',
+    'Population' : '2,192,229',
+    'Mayor' : 'Basil Zempilas',
+    'Area' : '2,478 mi²',
+    'Established' : '1829 AD',
+  },
+}
+for city, city_info in cities.items():
+  print(f"\nCity: {city}")
+  location = f"{city_info['State']}, {city_info['Country']}"
+  geography = f"{city_info['Area']} with {city_info['Population']}"
+  established = f"{city_info['Established']}"
+  mayor = f"{city_info['Mayor']}"
+  print(f"\tLocation: {location}")
+  print(f"\tGeography: {geography}")
+  print(f"\tEstablished: {established}")
+  print(f"\tMayor: {mayor}")
