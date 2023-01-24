@@ -1,0 +1,22 @@
+num_list = [-2, 4, 11, -18, -22, 24, 92, -112, -35, 44, 52, 6, -9, -63, 58]
+
+# Assignment Operators will assign a value to a variable. A variable can be re-assigned values multiple times (that is, we change the value of a variable). '=' is an assignment operator.
+
+# Declared a variable with name x and assigned it a value of 5
+x = 5
+print(x)
+
+# What if we want to add a value of 2 to the value of x?
+x = x + 2
+print(x)
+
+# We can do this with a '+=' assignment operator.
+x += 2
+print(x)
+
+# Let's take num_list and count the number of negative intergers in num_list using a for loop.
+count = 0
+for num in num_list:
+  if num < 0:
+    count += 1
+print(f'There are {count} negative numbers.')
