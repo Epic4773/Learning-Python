@@ -1,0 +1,61 @@
+# What is your favorite planet in our solar system, other than Earth?
+# The options are . . .
+# a) Mercury b) Venus c) Mars d) Jupiter e) Saturn f) Uranus g) Neptune
+
+poll_data = {
+  'Connor' : '',
+  'Daniel K' : 'Mars',
+  'Kaden' : 'Neptune',
+  'Lydia' : '',
+  'Mitch' : '',
+  'Nick' : 'Mars',
+  'Preston' : '',
+  'Qingbo' : '',
+  'Rohan' : '',
+  'Daniel W' : 'Jupiter',
+  'Anatoliy' : 'Saturn',
+  'Yelena' : 'Saturn',
+  'Maria' : 'Mars',
+  'Joseph' : 'Mars',
+  'Maksim' : 'Jupiter',
+  'David' : 'Venus',
+}
+
+total_Mercury = 0
+total_Venus = 0
+total_Mars = 0
+total_Jupiter = 0
+total_Saturn = 0
+total_Uranus = 0
+total_Neptune = 0
+
+print('The following people have answered my poll question: ')
+for person in poll_data.keys():
+    print(f'{person} has answered the poll')
+print(' ')
+
+for planet in poll_data.values():
+    if planet == 'Mercury':
+        total_Mercury += 1
+    elif planet == 'Venus':
+        total_Venus += 1
+    elif planet == 'Mars':
+        total_Mars += 1
+    elif planet == 'Jupiter':
+        total_Jupiter += 1
+    elif planet == 'Saturn':
+        total_Saturn += 1
+    elif planet == 'Uranus':
+        total_Uranus += 1
+    elif planet == 'Neptune':
+        total_Neptune += 1
+
+print(f'The number of people whose favorite planet other than Earth is Mercury was {total_Mercury}.')
+print(f'The number of people whose favorite planet other than Earth is Venus was {total_Venus}.')
+print(f'The number of people whose favorite planet other than Earth is Mars was {total_Mars}.')
+print(f'The number of people whose favorite planet other than Earth is Jupiter was {total_Jupiter}.')
+print(f'The number of people whose favorite planet other than Earth is Saturn was {total_Saturn}.')
+print(f'The number of people whose favorite planet other than Earth is Uranus was {total_Uranus}.')
+print(f'The number of people whose favorite planet other than Earth is Neptune was {total_Neptune}.')
+
+# Part 2 (Season Survey): https://replit.com/join/iqazkmegvq-danielkolbin
