@@ -1,0 +1,25 @@
+# What's your favorite sport?
+responses = {
+  'Daniel' : 'Soccer',
+  'Lydia' : 'Archery',
+  'Kaden' : 'Football',
+  'Mitch' : 'Chess',
+  'Rohan' : 'Tennis',
+  'Nick' : 'Basketball',
+  'Preston' : '8 Ball Pool',
+  'Qingbo' : 'Swimming',
+  'Connor' : 'Swimming',
+}
+print(responses)
+print()
+
+for name, sport in responses.items():
+  print(f'{name}\'s favorite sport is {sport}.')
+print()
+
+for key in responses.keys():
+  print(f'{key} has answered my poll question.')
+print()
+
+for value in responses.values():
+  print(f'{value} is a favorite sport.')
