@@ -1,0 +1,53 @@
+# What season do you most prefer?
+# The options are . . .
+# a) Spring b) Summer c) Autumn d) Winter e) Undecided
+
+poll_data = {
+  'Connor' : '',
+  'Daniel K' : 'Undecided',
+  'Kaden' : '',
+  'Lydia' : '',
+  'Mitch' : '',
+  'Nick' : '',
+  'Preston' : '',
+  'Qingbo' : '',
+  'Rohan' : '',
+  'Daniel W' : '',
+  'Anatoliy' : 'Autumn',
+  'Yelena' : 'Autumn',
+  'Maria' : 'Summer',
+  'Joseph' : 'Summer',
+  'Maksim' : 'Spring',
+  'David' : 'Winter',
+}
+
+total_Spring = 0
+total_Summer = 0
+total_Autumn = 0
+total_Winter = 0
+total_Undecided = 0
+
+print('The following people have answered my poll question: ')
+for person in poll_data.keys():
+    print(f'{person} has answered the poll')
+print(' ')
+
+for season in poll_data.values():
+    if season == 'Spring':
+        total_Spring += 1
+    elif season == 'Summer':
+        total_Summer += 1
+    elif season == 'Autumn':
+        total_Autumn += 1
+    elif season == 'Winter':
+        total_Winter += 1
+    elif season == 'Undecided':
+        total_Undecided += 1
+
+print(f'The number of people who preferred Spring was {total_Spring}.')
+print(f'The number of people who preferred Summer was {total_Summer}.')
+print(f'The number of people who preferred Autumn was {total_Autumn}.')
+print(f'The number of people who preferred Winter was {total_Winter}.')
+print(f'The number of people who were undecided was {total_Undecided}.')
+
+# Part 1 (Planets Survey): https://replit.com/join/bxfpgnrffr-danielkolbin
