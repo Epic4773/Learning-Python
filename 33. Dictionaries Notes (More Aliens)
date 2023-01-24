@@ -1,0 +1,33 @@
+# Type these three aliens in your notes today to get started. Copy and paste from your previous notes if needed.
+alien_0 = {'color':'green','points':5}
+alien_1 = {'color':'yellow','points':10}
+alien_2 = {'color':'red','points':15}
+
+# Create a list of dictionaries
+aliens = [alien_0, alien_1, alien_2]
+
+# Use a for loop to print the aliens in our list
+for alien in aliens:
+  print(alien)
+print()
+
+# Use a for loop and the range function to generate a list of aliens
+aliens = []
+for alien_number in range(10):
+  now_alien = {'color':'green','points':5}
+  aliens.append(now_alien)
+for alien in aliens:
+  print(alien)
+print()
+for alien in aliens:
+  alien['speed']='slow'
+  print(alien)
+print()
+for alien in aliens[:5]:
+  if alien['color']=='green':
+    alien['color']='yellow'
+    alien['points']=10
+    alien['speed']='medium'
+
+#for alien in aliens:
+#  print(aliens)
