@@ -1,0 +1,39 @@
+# Write a while loop that prompts the user to enter a series of pizza toppings until they enter a "quit" value. As they enter each topping, print them a final message telling them of all the topping that will be on their pizza (you may want to store these values in a list!).
+print('Hello!\n')
+print('Enter your toppings. \nThen enter "done" when you are finished.\n')
+toppings = ''
+answer = ''
+pizza_list = []
+while answer != 'done' :
+  answer = input(toppings)
+  pizza_list.append(answer)
+  if answer == 'done' :
+    del pizza_list[-1]
+    print(' ')
+    print(f'Your pizza toppings are {pizza_list}.')
+print(' ')
+print('——————————————————————————————')
+print(' ')
+
+# A move theater charges different ticket prices depending on age. If a person is under the age of 3, the ticket is free; if they are between 3 and 12, the ticket is $10; and if they are over age 12, the ticket is $15. Write a while loop that asks the user if they are buying another movie ticket. While the answer is yes, prompt them for the age of the person they are buting the ticket for, and then tell them the cost of their movie ticket. When they are done buying tickets, tell them how many tickets they have bought and tell them the total price (again, keep track of these values in some way!).
+tickets = 0
+price = 0
+age_question = ('What is your age? ')
+more = ('Would you like to buy tickets (y/n)? ')
+while True :
+  print(input(age_question))
+  if more == 'y' :
+    age = int(input(age_question)
+    if age < 3 :
+      print('Your ticket is free.')
+      tickets += 1
+      price += 0
+    elif age >= 3 and age <= 12 :
+      print('Your ticket is $10.')
+      tickets += 1
+      price += 10
+    else age > 12 :
+      print('Your ticket is $15.')
+      tickets += 1
+      price += 15
+print(f'\nYour total number of tickets is {tickets}, adding up to ${price}. Thank you!')
