@@ -1,0 +1,33 @@
+# The Range() Function
+for x in range(4):
+  print(x)
+print(' ')
+# Google: The range() function returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and stops before a specified number.
+# We can also specify a start and stop point for range
+for x in range(2,9):
+  print(x)
+print( )
+# A third argument will specify the step size.
+# Even number between 2 and 20:
+for x in range(2,21, 2):
+  print(x)
+print( )
+# Multiples of 5 between 5 and 100
+for x in range(5,101,5):
+  print(x)
+print( )
+# Print all of the first 10 powers of 4
+for x in range(1,11):
+  power = 4**x
+  if x == 1:
+    print(f'The 1st power of 4 is: {power}')
+  elif x == 2:
+    print(f'The 2nd power of 4 is: {power}')
+  elif x == 3:
+    print(f'The 3rd power of 4 is: {power}')
+  else:
+    print(f'The {x}th power of 4 is: {power}')
+print(' ')
+# Make a list of the first 10 powers of 4 using a List Comprehension.
+powers = [4**x for x in range(1,11)]
+print(powers)
