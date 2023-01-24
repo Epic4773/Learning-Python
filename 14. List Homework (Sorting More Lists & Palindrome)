@@ -1,0 +1,45 @@
+a = [16, 4, 49, 25, 1, 36, 100, 81, 9, 64]
+print(a)
+
+# 1. Sort "a" into a list of increasing values.
+a.sort()
+print(a)
+print( )
+
+# 2. Write code using list "a" to generate a new list that includes only of the odd elements in "a".
+for x in a :
+  if x%2 > 0:
+    print(x)
+print( )
+
+# 3. Write code that uses list "a" to generate a new list with only the elements of "a" that are greater than 25.
+for x in a :
+  if x > 25:
+    print(x)
+print( )
+
+# 4. Write code that asks the user for a word and then determines whether the word is a palindrome or not.
+word = input('Enter a word:  ')
+word2 = word[::-1]
+print('Your word:', word)
+print('Reversed:', word2)
+if word == word2 :
+  print('Word is indeed a palindrome.')
+else :
+  print('Word is not a palindrome.')
+response = input('Would you like to try another word (y/n)?  ')
+if response == 'y' :
+  new_word = input('Enter the new word:  ')
+  new_word2 = new_word[::-1]
+  word = new_word
+  word2 = new_word2
+  while word != word2 :
+    print('Word is not a palindrome.')
+    new_word = input('Try another word.  ')
+    word = new_word
+    new_word2 = new_word[::-1]
+    word2 = new_word2
+  if word == word2 :
+      print('Word is a palindrome!')
+if response == 'n' :
+  print('Okay, that\'s all :)')
