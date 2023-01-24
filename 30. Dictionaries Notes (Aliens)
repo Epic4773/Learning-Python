@@ -1,0 +1,46 @@
+alien_0 = {'color' : 'green' , 'points' : 5}
+# Dictionaries are constructed with curely ({}) brackets
+# and have key (:) value pairs seperated by commmas.
+print(alien_0['color'])
+print(alien_0['points'])
+points_scored = alien_0['points']
+print(f'You just earned {points_scored} points!')
+
+# Add values in a dictionary
+alien_0['x_position'] = 0
+alien_0['y_position'] = 25
+print(alien_0)
+
+# Start with an empty dictionary
+alien_1 = {}
+alien_1['color'] = 'blue'
+alien_1['points'] = 10
+print(alien_1)
+
+# Modify values in a dictionary
+alien_1['color'] = 'yellow'
+alien_1['points'] += 2 # 10 + 2 = 12
+color1 = alien_1['color']
+points1 = alien_1['points']
+print(f'Now alien_1 is {color1} and is worth {points1} points.')
+
+print(alien_0)
+alien_0['speed'] = 'medium'
+
+def move(alien):
+  # Assume alien is a dictionary object with 'speed' as a key
+  if alien['speed'] == 'slow':
+    xincrement = 1
+  elif alien['speed'] == ' medium':
+    x_increment = 2
+  elif alien['speed'] == 'fast':
+    x_increment = 3
+  # Add x_increment to the x_position
+  alien['x_position'] += x_increment
+
+print(alien_0[x_position])
+move(alien_0)
+print(alien_0[x_position])
+move(alien_0)
+move(alien_0)
+print(alien_0[x_position])
