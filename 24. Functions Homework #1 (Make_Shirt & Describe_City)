@@ -1,0 +1,24 @@
+print('1)')
+def make_shirt(size, message):
+  print(f"The t-shirt size is {size} and it reads {message}.")
+# Calling using POSITIONAL arugments.
+make_shirt('XL','Class of 2022')
+# Calling using KEYWORD arugments.
+make_shirt(size='XL',message='Class of 2022')
+print('')
+
+print('2)')
+def make_shirt2(size='Large', message='I love Python'):
+  print(f"The {size} t-shirt reads \"{message}\".")
+make_shirt2('Medium','I love Python')
+make_shirt2('Large','I love Python')
+make_shirt2('Small','It\'s beginning to look a lot like Halloween.')
+print('')
+
+print('3)')
+def describe_city(city='Warsaw',country='Poland'):
+    print(f"{city} is in {country}.")
+describe_city('Warsaw','Poland')
+describe_city('Kraków','Poland')
+describe_city('Kyiv','Ukraine')
+describe_city('Bern','Switzerland')
