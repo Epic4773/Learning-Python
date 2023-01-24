@@ -1,0 +1,44 @@
+def make_pizza(size, *toppings):
+# Size will accept the diameter of the pizza as an integer.
+# *Topping will accept an arbitrary number of pizza toppings.
+# (Arbitrary means however many we decide when we call the function.)
+  print(f'You have ordered a {size} inch pizza with the following toppings: ')
+  for topping in toppings:
+    print(f'- {topping}')
+make_pizza(16, 'chicken', 'ham', 'pineapple', 'bacon')
+
+print()
+def make_dinner(servings, *dishes):
+  print(f'You have ordered {servings} servings of the following dishes: ')
+  for dish in dishes:
+    print(f'- {dish}')
+make_dinner(8, 'roast turkey', 'stuffing', 'mashed potatoes', 'cranberry sauce', 'creamed onions', 'buttered rolls', 'pumpkin pie')
+
+print()
+def math(x):
+  # This function will RETURN the square of a number x AND it will return a boolean (that is, True if x is even, and false if x is not even)
+  square = x**2
+  if x%2 == 0:
+    even = True
+  else:
+    even = False
+# This function is returning a tuple. Think of a tuple as a combination of values. It is NOT a list and it can contain different data types.
+  return square, even
+
+square, even = math(4)
+print(square, type(square))
+print(even, type(even))
+square, even = math(5)
+print(square, type(square))
+print(even, type(even))
+
+print()
+def square_root(x):
+  square_ = x**(1/2)
+  if x%1 == 0:
+    root_ = True
+  else:
+    root_ = False
+  return root_0
+root_, square_ = math(9)
+print(root_, square_)
