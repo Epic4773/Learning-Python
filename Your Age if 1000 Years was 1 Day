@@ -1,0 +1,38 @@
+print('Hello.')
+print('Today you\'ll see how old you would be if 1 day is 1000 years...')
+print( )
+print('HOW IT WORKS:')
+print('The initial equation used will be: a/b = x/y')
+print('The specific equation rather will be: 1/1000 = x/y')
+print('"1" means 1 day and "1000" means 1000 years.')
+print('y is your age (in years) on Earth.')
+print('x is your converted age (in days).')
+print('We could further simplify it so we get hours and minutes.')
+print('To get the hours, you multiply x by 24.')
+print('To get the minutes, you multply x by 1440.')
+print('To get the seconds, you multply x by 86400.')
+print('(Numbers are rounded to the closest whole number.)')
+
+print('If an error message appears at any time or you wish to try another age, simply reload the tab and try again.')
+print( )
+
+a = 1
+b = 1000
+y = input('What is your age in years (y)? ')
+a = int(a)
+b = int(b)
+y = int(y)
+ay = (a * y)
+x = (ay / b)
+x_in_h = x * 24
+x_in_m = x * 1440
+x_in_s = x * 86400
+print( )
+
+print(f'If 1000 years was 1 day then your age is {x} days...')
+print(f'Or {round(x_in_h)} hours.')
+print(f'Or {round(x_in_m)} minutes.')
+print(f'Or {round(x_in_s)} seconds.')
+print(' ')
+
+print('Created on September 9, 2022 by Daniel Kolbin 🙂')
