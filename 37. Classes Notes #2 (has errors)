@@ -1,0 +1,36 @@
+class Car:
+# 1)  What does the function below do?
+  # Answer:  The function, also called Methods in a class, will make a simple model of a Car. The required __ini__ method an object of the class. Self initializes attributes.
+    def __init__(self, make, model, year):
+      self.make = make
+      self.model = model
+      self.year = year
+      self.odometer = 0
+      self.color = gray
+        
+# 2)  What are ALL the attributes of class Car?
+  # Answer:  The attributes of the Car class are make, model, year, and odometer (mileage).
+    
+# 3)  What does the function below do?
+  # Answer:  The function makes a defining function called describe_car to give a description or full name for self (which is the Car). It then returns it with the return function if and when the function is called, which would go {year} {make} {model}.
+    def describe_car(self):
+        long_name = (f"{self.year} {self.make} {self.model}")
+        return long_name.title()
+
+# 4) Why don't I need to include the odometer attribute when I instantiate my_car?
+  # Answer:  It's automatic.
+
+my_car = Car('Volkswagen', 'Jetta', 2012)
+my_car.describe_car()
+
+# 5) Make a your_car object here and call the describe_car() method on it.
+
+
+# 6) Can you write a method in class Car above that adds miles to the odometer?
+    # What if someone tries to add negative miles to the odometer?
+    
+# 7) Write a show_miles() method in class Car above that prints a message showing the mileage of each car.
+  # Answer:  
+
+# 8) Add a different amount of miles to my_car and your_car using your method from #6, and then
+       # Use your method from #7 to show the mileage of each car.
