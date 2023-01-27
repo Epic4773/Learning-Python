@@ -1,0 +1,58 @@
+class Car:
+    
+    # 1)  What does the function below do?
+    # Answer:  The __init__ method instantiates a Car object.
+    #          arguments are passed to make, model, and year
+    #          odometer is initialized to zero
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer = 0
+        
+    # 2)  What are ALL the attributes of class Car?
+    # Answer:  4 total:  make, model, year, odometer
+    
+    # 3)  What does the function below do?
+    # Answer:  it returns a string that is "year make model" for a car object
+    def describe_car(self):
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+
+    def add_miles(self, miles):
+      if type(miles) != int:
+        print("add_miles only accepts integer values")
+      elif miles < 0:
+        print("It is illegal to roll back your odometer.")
+      else:
+        self.odometer += miles
+  
+    def show_miles(self):
+      # any methods in a class can reference other methods and
+      # attributes of that class using the self keyword
+      print(f"The {self.describe_car()} has {self.odometer} miles.")
+
+# 4) Why don't I need to include the odometer attribute when I instantiate my_car?
+# Answer:  Odometer is initialized by __init__ and does not take an argument in __init__
+my_car = Car('Volkswagen', 'Jetta', 2012)
+print(my_car.describe_car())
+
+# 5) Make a your_car object below and call the describe_car() method on it.
+your_car = Car('Nissan','Rouge',2018)
+print(your_car.describe_car())
+
+
+# 6) Can you write a method in class Car above that adds miles to the odometer?
+    # The method should accept an integer value as a parameter and add that value to odometer
+    # What if someone tries to add negative miles to the odometer?
+    
+# 7) Write a show_miles() method in class Car above that prints a message showing the mileage of the car.
+
+# 8) Add a different amount of miles to my_car and your_car using your method from #6, and then
+#    use your method from #7 to show the mileage of each car.
+
+my_car.add_miles(140000)
+my_car.show_miles()
+your_car.add_miles(-100)
+your_car.add_miles(25000)
+your_car.show_miles()
