@@ -1,0 +1,10 @@
+# Write the class Account that will represent a user’s Bank Account.
+# Each Account object should have 4 attributes:  first, last, username, and balance
+# __init__ should accept first and last as arguments. It should generate the username that is the first letter of the first name followed by the last name, all lowercase. Ex:  Account(“Daniel”,”Wavle”) should result in username = “dwavle”. __init__ should also initialize balance to zero.
+# Write the method deposit() for Account. Deposit should accept a dollar amount (represented by an integer) and add it to balance.
+# Write the method withdraw() for Account. Withdraw should accept a dollar amount to be withdrawn from the account and subtract it from balance. withdraw() should NOT accept values that will overdraw the account! Print a warning message if that happens and do not subtract from the account.
+# Write the display_account() method that will print out, line by line, the FULL name of the user, the username for the account, and the balance of the account.
+# Create two different account objects.
+# Test your deposit() and withdraw() methods on each account.
+# Try to overdraw one of your accounts to should that withdraw() works properly
+# Test display_account() on each account object to show that it works
