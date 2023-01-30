@@ -1,9 +1,6 @@
 class Car:
-    
     # 1)  What does the function below do?
-    # Answer:  The __init__ method instantiates a Car object.
-    #          arguments are passed to make, model, and year
-    #          odometer is initialized to zero
+    # Answer:  The __init__ method instantiates a Car object. Arguments are passed to make, model, and year. Odometer is initialized to zero.
     def __init__(self, make, model, year):
         self.make = make
         self.model = model
