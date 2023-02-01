@@ -1,0 +1,42 @@
+class Account:
+  def __init__ (self, first, last):
+    self.first = first
+    self.last = last
+    self.username = first[0].lower() + last.lower()
+    self.balance = 0
+  
+  def deposit(self, deposit):
+    if type(deposit) != int:
+      print('deposit only accepts integer values.')
+    elif deposit < 0:
+      print('Try the withdraw command instead of depositing negatives.') 
+    else:
+      self.balance += deposit
+
+  def withdraw(self, withdraw):
+    if type(withdraw) != int:
+      print('withdraw only accepts integer values.')
+    elif withdraw < 0:
+      print('Try the deposit command instead of withdrawing negatives.') 
+    elif withdraw > self.balance:
+      print('You cannot overdraw your account.')  
+    else:
+      self.balance -= withdraw
+
+  def display_account(self):
+    print()
+    print(f"Account Holder: {self.first} {self.last}")
+    print(f"Account Username: {self.username}")
+    print(f"Account Balance: {self.balance}")
+    print()
+
+account_1 = Account('Andrew','Washington')
+account_1.deposit(-100)
+account_1.deposit(1200)
+account_1.withdraw(400)
+account_1.display_account()
+account_2 = Account('Rosanna ','Wilkinson')
+account_2.deposit(2000)
+account_2.deposit(-2000)
+account_2.withdraw(2500)
+account_2.display_account()
