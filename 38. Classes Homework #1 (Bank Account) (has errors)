@@ -18,14 +18,37 @@ class Account:
     self.last = last
     self.username = first[0].lower() + last.lower()
     self.balance = 0
+  
+  def deposit(self, balance):
+    if deposit(balance) != int:
+      print('Balances do not deal with strings, only integers.')
+    elif deposit(balance) < 0:
+      print('Try the withdraw command instead of depositing negative numbers.') 
+    else:
+      self.balance += deposit
 
-# account_1 = Account('Andrew','Washington')
-# account_1.deposit(-100)
-# account_1.deposit(1200)
-# account_1.withdraw(400)
-# account_1.display_account()
-# account_2 = Account('Rosanna ','Wilkinson')
-# account_2.deposit(2000)
-# account_2.deposit(-2000)
-# account_2.withdraw(2500)
-# account_2.display_account()
+  def withdraw(self, balance):
+    if withdraw(balance) != int:
+      print('Balances do not deal with strings, only integers.')
+    elif deposit(balance) < 0:
+      print('Try the deposit command instead of withdrawing negative numbers.') 
+    elif withdraw(balance) > balance:
+      print('You cannot overdraw your account.')  
+    else:
+      self.balance -= withdraw
+
+  def display_account(self):
+    print({first} + {last})
+    username()
+    balance()
+
+account_1 = Account('Andrew','Washington')
+account_1.deposit(-100)
+account_1.deposit(1200)
+account_1.withdraw(400)
+account_1.display_account()
+account_2 = Account('Rosanna ','Wilkinson')
+account_2.deposit(2000)
+account_2.deposit(-2000)
+account_2.withdraw(2500)
+account_2.display_account()
