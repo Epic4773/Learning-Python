@@ -1,16 +1,18 @@
-#print('Function 1')
-#print()
+print('Function #1')
+print()
 
-#def function1(*addends):
-#  total = 0
-#  for addend in addends:
-#    total += addends
-#print(function1(2,3))
-#print(function1(3,5,4))
-#print(function1(1,1,2,4,7))
+def function1(*addends):
+  total = 0
+  for addend in addends:
+    total += addend
+  return total
+
+print(function1(2,3))
+print(function1(3,5,4))
+print(function1(1,1,2,4,7))
 
 print()
-print('Function 2')
+print('Function #2')
 print()
 
 def function2(subject, adjective='interesting'):
@@ -21,7 +23,7 @@ function2('History')
 function2('Computer Science','fun')
 
 print()
-print('Function 3')
+print('Function #3')
 print()
 
 def function3(string):
@@ -32,23 +34,22 @@ def function3(string):
       upper_count += 1
     if char.islower():
       lower_count += 1
+  return upper_count, lower_count
 
 print(function3('Old Vincennes Rd'))
 print(function3('Floyd Central HS'))
 
 print()
-print('Function 4')
+print('Function #4')
 print()
 
 def function4(number):
   prime = True
-  for num in number:
-    if number%2 > 0:
+  for i in range(2, number):
+    if number % i == 0:
       prime = False
-  if num == True:
-    num /= 2
-  if num == False:
-   print('error')
+      break
+  return prime
 
 print(function4(28))
 print(function4(11))
@@ -56,8 +57,16 @@ print(function4(56))
 print(function4(21))
 
 print()
-print('Function 5')
+print('Function #5')
 print()
+
+def function5(a, b, c):
+  if a > b and a > c:
+    return a
+  elif b > a and b > c:
+    return b
+  else:
+    return c
 
 print(function5(3, 4, 5))
 print(function5(5, 3, 4))
