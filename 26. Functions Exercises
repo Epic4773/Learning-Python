@@ -1,16 +1,12 @@
 print('Exercise #1')
 def find_max(a,b,c):
-  numbers_1 = []
-  numbers_1 += a,b,c
-  for num_1 in numbers_1:
-    if a > b and a > c:
-      print(f'The maximum number is {a}.')
-    if b > a and b > c:
-      print(f'The maximum number is {b}.')
-    if c > a and c > b:
-      print(f'The maximum number is {c}.')
-  return num_1
-find_max(21,-14,7)
+  if a > b and a > c:
+    return a
+  if b > a and b > c:
+    return b
+  if c > a and c > b:
+    return c
+print(find_max(21,-14,7))
 
 print()
 print('Exercise #2')
@@ -23,16 +19,18 @@ print(sum_list_2([20,-5,0,5]))
 
 print()
 print('Exercise #3')
+print('N/A')
 
 print()
 print('Exercise #4')
-def string_4 = 'Class of 2023':
+def print_string_4(string_4):
   print(string_4)
   print(string_4[::-1])
 
+print_string_4('Class of 2023')
+
 print()
 print('Exercise #5')
-
 def case_count(string_5):
   upper_count = 0
   lower_count = 0
@@ -41,18 +39,21 @@ def case_count(string_5):
       upper_count += 1
     if char.islower():
       lower_count += 1
-case_count('One Day, I\'m going to make Onions cry.')
-print(f'There are {upper_count} uppercase characters in your string and {lower_count} lowercase character.')
+  return upper_count, lower_count
+upper, lower = case_count('One Day, I\'m going to make Onions cry.')
+print(f'There are {upper} uppercase characters in your string and {lower} lowercase characters.')
 
 print()
 print('Exercise #6')
 def is_prime(number_6):
   prime = True
-  for factor in range(2,number_6):
-    if number%2 > 0:
+  for factor in range(2, number_6):
+    if number_6 % factor == 0:
       prime = False
+      break
   return prime
-print(is_prime)
+print(is_prime(7))
 
-#print()
-#print('Exercise #7')
+print()
+print('Exercise #7')
+print('N/A')
