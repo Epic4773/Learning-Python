@@ -1,0 +1,90 @@
+class Car:
+  def __init__(self, make, model, year):
+    # Makes a Car object with the following attributes:
+    self.make = make
+    self.model = model
+    self.year = year
+    self.odometer = 0
+    self.tank = 0
+        
+  def describe_car(self):
+    # Returns a string that is the full name of the car
+    long_name = f"{self.year} {self.make} {self.model}"
+    return long_name.title()
+        
+  def add_miles(self, miles):
+    # Increments miles too the odometer as long as miles is positive
+    if miles < 0:
+      print("It is illegal to roll back your odometer!")
+    else:
+      self.odometer += miles
+
+  def show_miles(self):
+    # Prints a statement displaying the mileage of the car
+    print(f"The {self.describe_car()} has {self.odometer} miles")
+        
+  def add_gas(self, gallons):
+    # Adds gallons to the tank as long as the tank size is not exceeded
+    tank_size = 15 # Amount of gallons the tank can hold
+    if (self.tank + gallons) < tank_size:
+      self.tank += gallons
+    else:
+      print("You are adding too many gallons to the tank!")
+            
+  def show_range(self):
+    # Prints a statement that shows how far the car can travel
+    mileage = 30 # The mileage (in miles per gallon of fuel)
+    miles = mileage*self.tank
+    print(f"This car can travel {miles} miles before needing gas.")
+        
+class Battery:
+  # A simple class to model a Battery for an Electric Car
+  def __init__(self):
+    # Creates a battery object with one attribute
+    self.charge = 0
+        
+  def charge_battery(self, kwh):
+    # Adds a charge in kilowatt-hours to a battery so long as it does not exceed the charge limit
+    battery_size = 75
+    if (self.charge + kwh) < battery_size :
+      self.charge += kwh
+    else:
+      print("Cannot charge battery past its limit!")
+            
+  def describe_battery(self):
+    # Returns a string that is a description of the car's battery
+    description = f"This car has {self.charge} kilowatt-hours left in its battery."
+    return description
+        
+my_car = Car('volkswagen', 'jetta', 2012)
+my_car.add_miles(140000)
+my_car.add_gas(10)
+my_car.show_range()
+my_car.add_gas(20)
+print()
+
+class Electric_Car(Car):
+  # Defines Electric_Car as a child class of the parent class Car
+  def __init__(self, make, model, year):
+    # When we create an Electric_Car object, it will inherit the attributes and methods from class car
+    super().__init__(make, model, year)
+    # Creates a battery attribute for Electric_Car that is an object from class Battery
+    self.battery = Battery()
+
+# When you wrute a method in the child class with the same name as a method in the parent class, the child class method overwrites the parent class method
+  def add_gas(self, gallons):
+    print('Cannot add gas to an Electric Vehicle.')
+
+  # Changed show_range() to apply to Electric_Car
+  def show_range(self):
+    mileage = 3.5 # Miles per kwh
+    miles = mileage*float(self.battery.charge)
+    print(f"This car can travel {miles} miles before needing to charge its battery.")
+
+my_tesla = Electric_Car('tesla','model y',2023)
+print(my_tesla.describe_car())
+my_tesla.add_gas(15)
+my_tesla.battery.charge_battery(80)
+my_tesla.battery.charge_battery(55)
+print(my_tesla.battery.describe_battery())
+my_tesla.show_range()
