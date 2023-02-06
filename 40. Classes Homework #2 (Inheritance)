@@ -1,0 +1,47 @@
+import random
+
+class Account:
+  def __init__ (self, first, last):
+    self.first = first
+    self.last = last
+    self.username = first[0].lower() + last.lower()
+    self.balance = 0
+  
+  def deposit(self, deposit):
+    if type(deposit) != int:
+      print('deposit only accepts inter values.')
+    elif deposit < 0:
+      print('Try the withdraw command instead of depositing negatives.')
+    else:
+      self.balance += deposit
+
+  def withdraw(self, withdraw):
+    if type(withdraw) != int:
+      print('withdraw only accepts inter values.')
+    elif withdraw < 0:
+      print('Try the deposit command instead of withdrawing negatives.')
+    elif withdraw > self.balance:
+      print('You cannot overdraw your account.')  
+    else:
+      self.balance -= withdraw
+
+  def display_account(self):
+    print()
+    print(f"Account Holder: {self.first} {self.last}")
+    print(f"Account Username: {self.username}")
+    print(f"Account Balance: {self.balance}")
+    print()
+
+numbers = []
+while len(numbers) < 17:
+  num = random.randint(0,16)
+  numbers.append(num)
+
+class Checking(Account):
+  def __init__(self, make, model, year):
+    super().__init__(make, model, year)
+    self.getNewCard = card_number
+    card_number.append(numbers)
+
+#class Savings(Account):
+  
