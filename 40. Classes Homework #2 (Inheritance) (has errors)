@@ -32,16 +32,26 @@ class Account:
     print(f"Account Balance: {self.balance}")
     print()
 
-numbers = []
-while len(numbers) < 17:
-  num = random.randint(0,16)
-  numbers.append(num)
-
 class Checking(Account):
   def __init__(self, make, model, year):
     super().__init__(make, model, year)
     self.getNewCard = card_number
     card_number.append(numbers)
+    self.card_number = ''
 
-#class Savings(Account):
+  def getNewCard(self):
+    numbers = []
+    while len(numbers) < 17:
+      numbers.append(num)
+      num = random.randint(0,16)
+    self.card_number = 
+
+  def show_card(self):
+    print(f"Your credit card number is: {self.card_number}")
+
+class Savings(Account):
+  def __init__(self, first, last):
+    super().__init__(first, last)
   
+  def withdraw(self, withdraw):
+    print('You cannot withdraw money from a savings account.')
