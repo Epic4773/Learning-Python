@@ -39,13 +39,15 @@ class Checking(Account):
 
   def getNewCard(self):
     card_number = ''
-    for char_count in range(16):
-      if char_count > 0 and char_count % 4 == 0:
-        self.card_number += '-'
-      self.card_number += str(random.randint(0,9))
+    for i in range(1,20):
+      if i%5 > 0:
+        card_number += str(random.randint(0,9))
+      else:
+        card_number += '-'
+    self.card_number = card_number
     return self.card_number
 
-  def show_card(self):
+  def showCard(self):
     print(f"Your credit card number is: {self.card_number}")
 
 class Savings(Account):
@@ -55,8 +57,11 @@ class Savings(Account):
   def withdraw(self, withdraw):
     print('You cannot withdraw money from a savings account.')
 
-#  def apply_interest(self):   
+  def apply_interest(self, interest_rate=0.02):
+    interest = self.balance * interest_rate
+    self.balance += interest
 
-checking_account = Checking('Andrew','Washington')
-checking_account.getNewCard()
-checking_account.show_card()
+object_name = Checking('Andrew','Washington')
+object_name.display_account()
+object_name.getNewCard()
+object_name.showCard()
