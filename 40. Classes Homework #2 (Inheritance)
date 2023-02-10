@@ -9,7 +9,7 @@ class Account:
   
   def deposit(self, deposit):
     if type(deposit) != int:
-      print('deposit only accepts inter values.')
+      print('Deposit only accepts inter values.')
     elif deposit < 0:
       print('Try the withdraw command instead of depositing negatives.')
     else:
@@ -17,7 +17,7 @@ class Account:
 
   def withdraw(self, withdraw):
     if type(withdraw) != int:
-      print('withdraw only accepts inter values.')
+      print('Withdraw only accepts inter values.')
     elif withdraw < 0:
       print('Try the deposit command instead of withdrawing negatives.')
     elif withdraw > self.balance:
@@ -45,7 +45,6 @@ class Checking(Account):
       else:
         card_number += '-'
     self.card_number = card_number
-    return self.card_number
 
   def showCard(self):
     print(f"Your credit card number is: {self.card_number}")
@@ -54,14 +53,22 @@ class Savings(Account):
   def __init__(self, first, last):
     super().__init__(first, last)
   
-  def withdraw(self, withdraw):
-    print('You cannot withdraw money from a savings account.')
+  def withdraw(self, amount):
+    print('Let\'s not withdraw money from a savings account.')
 
   def apply_interest(self, interest_rate=0.02):
     interest = self.balance * interest_rate
     self.balance += interest
+    return self.balance
 
-object_name = Checking('Andrew','Washington')
-object_name.display_account()
-object_name.getNewCard()
-object_name.showCard()
+checking_object = Checking('Andrew','Washington')
+checking_object.getNewCard()
+checking_object.showCard()
+checking_object.deposit(100)
+checking_object.withdraw(50)
+checking_object.display_account()
+
+savings_object = Savings('Andrew','Washington')
+savings_object.deposit(1000)
+savings_object.withdraw(2000)
+savings_object.display_account()
