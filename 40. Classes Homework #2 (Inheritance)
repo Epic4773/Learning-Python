@@ -26,11 +26,9 @@ class Account:
       self.balance -= withdraw
 
   def display_account(self):
-    print()
     print(f"Account Holder: {self.first} {self.last}")
     print(f"Account Username: {self.username}")
     print(f"Account Balance: {self.balance}")
-    print()
 
 class Checking(Account):
   def __init__(self, first, last):
@@ -69,6 +67,9 @@ checking_object.withdraw(50)
 checking_object.display_account()
 
 savings_object = Savings('Andrew','Washington')
+savings_object.withdraw(1000)
 savings_object.deposit(1000)
-savings_object.withdraw(2000)
+savings_object.apply_interest()
+savings_object.display_account()
+savings_object.apply_interest(0.07)
 savings_object.display_account()
