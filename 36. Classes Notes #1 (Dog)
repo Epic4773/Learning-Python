@@ -1,57 +1,56 @@
 class Dog:
-  # This class will be a simple model of a Dog.
-  # Functions inside a class are called Methods.
-  # A class msut have an __ini__ method in order to make an object of that class.
-  def __init__(self, name, age):
-    # Initialize name and age attributes
-    self.name = name
-    self.age = age
-  
-  def sit(self):
-    # Simulate a Dog sitting by command
-    print(f"{self.name} is now sitting.")
+    # This class will be a simple model of a Dog.
+    # Functions inside a class are called Methods.
+    # A class must have an __init__ method in order to make an object of that class.
+    def __init__(self, name, age):
+        # Initialize name and age attributes
+        self.name = name
+        self.age = age
 
-  def roll_over(self):
-    print(f"{self.name} rolled over!")
+    def sit(self):
+        # Simulate a Dog sitting by command
+        print(f"{self.name} is now sitting.")
 
-  # More custom commands
-  def bark(self):
-    print(f"{self.bark} just barked!")
+    def roll_over(self):
+        print(f"{self.name} rolled over!")
 
-  def sleep(self):
-    print(f"{self.sleep} fell asleep.")
+    def bark(self):
+        print(f"{self.name} just barked!")
 
-  def awaken(self):
-    print(f"{self.awaken} woke up.")
+    def sleep(self):
+        print(f"{self.name} fell asleep.")
 
-  def dig(self):
-    print(f"{self.dig} is digging.")
+    def awaken(self):
+        print(f"{self.name} woke up.")
 
-  def jump(self):
-    print(f"{self.jump} has jumped.")
+    def dig(self):
+        print(f"{self.name} is digging.")
 
-  def chase(self):
-    print(f"{self.chase} is now chasing!")
+    def jump(self):
+        print(f"{self.name} has jumped.")
 
-  def pant(self):
-    print(f"{self.pant} is panting.")
+    def chase(self, obj):
+        print(f"{self.name} is now chasing {obj}!")
 
-  def yawn(self):
-    print(f"{self.yawn} just yawned.")
+    def pant(self):
+        print(f"{self.name} is panting.")
 
-my_dog = Dog("Buddy",5)
+    def yawn(self):
+        print(f"{self.name} just yawned.")
+
+
+my_dog = Dog("Buddy", 5)
 
 # Reference the attributes of my_dog
 print(f"{my_dog.name} is {my_dog.age} years old.")
 
 my_dog.sit()
 my_dog.roll_over()
-
 my_dog.awaken()
 my_dog.bark()
 my_dog.dig()
 my_dog.jump()
-my_dog.chase()
+my_dog.chase('a ball')
 my_dog.pant()
 my_dog.yawn()
 my_dog.sleep()
