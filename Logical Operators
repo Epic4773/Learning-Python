@@ -1,0 +1,28 @@
+x = 7
+
+# and returns True if BOTH statements are true.
+print('Ex 1) and ')
+print('True and True:')
+print(x > 6 and x < 9)
+print('True and False:')
+print(x > 6 and x == 6 )
+print('False and False:')
+print(x < 3 and x > 8)
+print(' ')
+
+# or returns True if at least one statement is true
+print('Ex 2) or ')
+print('True or True:')
+print(x > 6 or x < 9)
+print('True or False:')
+print(x > 6 or x == 6 )
+print('False or False:')
+print(x < 3 or x > 8)
+print(' ')
+
+# not reverses the result
+print('Ex 3) not ')
+print('not(True)')
+print(not(x==7))
+print('not(False)')
+print(not(x != 7))
