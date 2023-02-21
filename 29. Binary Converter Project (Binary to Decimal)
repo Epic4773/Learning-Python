@@ -1,4 +1,8 @@
-# This convert function is a function that performs two separate tasks, converting Binary to Decimal and Decimal to Binary. Binary numbers will be represented by strings and decimal numbers will be represented by intergers. For binary_sum, the starting number is 0. The string input is reversed and we do some looping. If there's a '1' then the binary sum (end result) will increase by 2 to the power of the index. For now, this function only has the Binary to Decimal part.
+# This convert function is a function that performs two separate tasks, converting Binary to Decimal and Decimal to Binary.
+# Binary numbers will be represented by strings and decimal numbers will be represented by intergers.
+# For binary_sum, the starting number is 0. The string input is reversed and we do some looping.
+# If there's a '1' then the binary sum (end result) will increase by 2 to the power of the index.
+# For now (and forever), this function converts only Binary to Decimal.
 def convert(string):
   binary_sum = 0
   string = string[::-1]
@@ -6,16 +10,9 @@ def convert(string):
     char = string[index]
     if char == '1':
       binary_sum += 2**index
-    else:
-      binary_sum += 0
-    if char == 1:
-      break
-      print('error')
+    elif char != '0':
+      return None
   return binary_sum
-  # Decimal to Binary
-#  decimal_sum = 0
-#  for index in range(digit):
-#    if char == 1:
 
 # Binary to Decimal
 print(convert('101001'))
