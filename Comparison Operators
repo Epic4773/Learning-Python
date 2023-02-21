@@ -1,0 +1,41 @@
+a = 4 # = is assigning values to a, b and c
+b = 4
+c = 3
+
+#Comparison Operators will test two values
+#Comparison Operators return a Boolean
+#A Boolean is a data type that is either True or False
+#If the test is passed, True is returned
+#If the test is passed, False is returned
+
+print('Ex 1) == or equal')
+print(a==b)
+print(a==c)
+print(type(a==b))
+print(' ')
+
+print('Ex 2) != or not equal')
+print(a != b)
+print(a != c)
+print(' ')
+
+print('Ex 3) > or Greater than')
+print(a > c)
+print(a > b)
+print(' ')
+
+print('Ex 4) < or Less than')
+print(c < a)
+print(a < b)
+print(' ')
+
+print('Ex 5) >= or Greater than or equal to')
+print(a >= c)
+print(a >= b)
+print(c >= b)
+print(' ')
+
+print('Ex 6) <= or Less than or equal to')
+print(c <= a)
+print(a <= b)
+print(a <= c)
