@@ -1,0 +1,42 @@
+#Arithmetic Operations
+a = 7
+b = 3  #creates a and b as integer objects
+# Hashtags make comments. Comments do 
+# NOT affect your code.
+print('this is a String (text)')
+
+# Ex. 1 -- Integer Addition
+c = a + b
+print('Ex 1) '+str(c))
+
+# Ex. 2 -- Integer Subtraction
+d = a - b
+print('Ex 2) '+str(d))
+
+# Ex. 3 -- Integer Multiplication
+e = a*b
+print('Ex 3) '+str(e))
+
+# Ex. 4 -- Integer Division, can result in an int or float
+f = a/b
+print('Ex 4) '+str(f))
+print(type(f))
+
+# Ex. 5 -- Floor Division, cuts off the decimal
+g = a//b
+print('Ex 5) ',g)
+print(type(g))
+
+# Ex. 6 -- Modulus, returns the remainder
+h = a%b
+print('Ex 6) ', h)
+
+# Ex. 7 -- Exponentiation
+i = a**2
+print('Ex 7) ', i)
+
+# Ex. 8 -- String Addition or "concatenation"
+string1 = 'Were'
+string2 = 'wolf'
+result = string1+string2
+print(result)
