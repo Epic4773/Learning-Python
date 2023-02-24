@@ -1,0 +1,39 @@
+# A module is a file containing code. Here's how to import a class from a module.
+from car import Car
+new_car = Car('Nissan','Rouge',2021)
+print(new_car.describe_car()) 
+
+print()
+# We can also import classes using an alias.
+from car import ElectricCar as EC
+car_2 = EC('Tesla','Model Y',2020)
+print(car_2.describe_car()) 
+car_2.add_fuel(10)
+car_2.battery.charge_battery(50)
+car_2.show_range()
+
+# We wouldn't normally have repeat import statements, but these notes are going to show other ways to write import statements.
+
+#We can import two classes at once:
+from car import Car, ElectricCar
+
+# ... and use an alias
+from car import Car as C, ElectricCar as EC
+
+print()
+# or you can simply import the whole module
+import car
+# and then reference the classes from the car module
+car_3 = car.Car('Honda','Civic',2018)
+car_3.add_miles(30000)
+car_3.show_miles()
+
+print()
+# There are many modules available in the Python Standard Library, like the random module we've used before. Here's the randint method from random:
+from random import randint
+print(randint(1,6))
+
+from random import choice
+players = ['daniel','josh','abigail','mary','eli']
+first_up = choice(players)
+print(first_up)
