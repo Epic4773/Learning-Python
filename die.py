@@ -1,5 +1,4 @@
-# Use this code with: https://github.com/Epic4773/Learning-Python/blob/main/42.%20Die%20Class%20Assignment%20(Task%201)
-
+# Use the following link to make a seperate file called "main.py": https://github.com/Epic4773/Learning-Python/blob/main/42.%20Die%20Class%20Assignment%20(Task%201)
 import random
 
 class Die:
