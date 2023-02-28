@@ -1,4 +1,4 @@
-# Use the following link to make a seperate file called "die.py": https://github.com/Epic4773/Learning-Python/blob/main/die.py (lines 3 and onward would be main.py).
+# Use the following link to make a seperate file called "car.py": https://github.com/Epic4773/Learning-Python/blob/main/die.py
 
 from die import Die
 
