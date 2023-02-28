@@ -1,4 +1,4 @@
-# Use this code in: https://github.com/Epic4773/Learning-Python/blob/main/41.%20Importing%20Classes%20and%20Modules%20(Car)
+# Use this code with: https://github.com/Epic4773/Learning-Python/blob/main/41.%20Importing%20Classes%20and%20Modules%20(Car)
 class Car:
   def __init__(self, make, model, year):
     # makes a Car object with the following attributes
