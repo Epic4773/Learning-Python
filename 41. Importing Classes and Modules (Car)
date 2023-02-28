@@ -1,4 +1,4 @@
-# Use this code to make a seperate file called "car.py": https://github.com/Epic4773/Learning-Python/blob/main/car.py (the rest will be in the main.py file).
+# Use the following link to make a seperate file called "car.py": https://github.com/Epic4773/Learning-Python/blob/main/car.py
 
 # A module is a file containing code. Here's how to import a class from a module.
 from car import Car
