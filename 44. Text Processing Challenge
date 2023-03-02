@@ -1,0 +1,27 @@
+# Download the text file for The Library of Babel by Jorge Luis Borges (on Google Classroom) and upload it OR copy and paste it into a text file on Replit.
+# Then, write code in order to compute the answers to the following questions (make use of the split, and strip String methods and the len function for these).
+# NOTE: Each question is more difficult than the last. See how far you can get!
+
+print('1. How many lines of text are in Library_of_Babel.txt?')
+print('191')
+print()
+
+print('2. How many sentences are there in the short story?')
+print('Answer')
+print()
+
+print('3. How many times does the word “infinite” appear in the short story? How about the word “hexagon”?')
+print('Answer')
+print()
+
+print('4. What is the average sentence length (both average number of words and average number of characters in a sentence)?')
+print('Answer')
+print()
+
+print('5. Can you think of something else that might be fun/interesting to compute from the story using Python?')
+print('Answer')
+print()
+
+#with open('library_of_babel.txt') as file_object:
+#  contents = file_object.read()
+#print(contents)
