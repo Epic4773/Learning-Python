@@ -1,4 +1,6 @@
- The universe (which others call the Library) is composed of an indefinite,
+# Use the following link to make a seperate file called "main.py": https://github.com/Epic4773/Learning-Python/blob/main/44.%20Text%20Processing%20Challenge%20(The%20Library%20of%20Babel)
+
+The universe (which others call the Library) is composed of an indefinite,
 perhaps infinite number of hexagonal galleries. In the center of each gallery
 is a ventilation shaft, bounded by a low r,ailing. From any hexagon one can
 see the floors above and below-one after another, endlessly. The arrangement of the galleries is always the same: Twenty bookshelves, five to each
