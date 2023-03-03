@@ -4,26 +4,49 @@
 # Then, write code in order to compute the answers to the following questions (make use of the split, and strip String methods and the len function for these).
 # NOTE: Each question is more difficult than the last. See how far you can get!
 
+with open('library_of_babel.txt') as file:
+  text = file.read()
+
 print('1. How many lines of text are in Library_of_Babel.txt?')
-print('191')
+print()
+lines = text.split('\n')
+num_lines = len(lines)
+print(f"Number of lines: {num_lines}")
 print()
 
 print('2. How many sentences are there in the short story?')
-print('Answer')
+print()
+sentences = text.split('.') + text.split('?')
+num_sentences = len(sentences)
+print(f"Number of sentences: {num_sentences}")
 print()
 
 print('3. How many times does the word “infinite” appear in the short story? How about the word “hexagon”?')
-print('Answer')
+print()
+num_infinite = text.count('infinite')
+num_hexagon = text.count('hexagon')
+print(f"Number of times 'infinite' appears: {num_infinite}")
+print(f"Number of times 'hexagon' appears: {num_hexagon}")
 print()
 
 print('4. What is the average sentence length (both average number of words and average number of characters in a sentence)?')
-print('Answer')
+print()
+words = text.split()
+num_words = len(words)
+num_chars = len(text)
+avg_words = num_words / num_sentences
+avg_chars = num_chars / num_sentences
+print(f"Average sentence length (words): {round(avg_words)}")
+print(f"Average sentence length (characters): {round(avg_chars)}")
 print()
 
 print('5. Can you think of something else that might be fun/interesting to compute from the story using Python?')
-print('Answer')
 print()
-
-#with open('library_of_babel.txt') as file_object:
-#  contents = file_object.read()
-#print(contents)
+word_count = {}
+for word in words:
+  if word in word_count:
+    word_count[word] += 1
+  else:
+    word_count[word] = 1
+most_common_word = max(word_count, key=word_count.get)
+print(f'Most common word: "{most_common_word}" ({word_count[most_common_word]} occurrences)')
