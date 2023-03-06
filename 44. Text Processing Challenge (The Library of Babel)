@@ -5,37 +5,48 @@
 # NOTE: Each question is more difficult than the last. See how far you can get!
 
 with open('library_of_babel.txt') as file:
-  text = file.read()
+  contents = file.read().rstrip()
+  total_lines = len(contents.split('\n'))
+  contents_processed = contents
 
 print('1. How many lines of text are in Library_of_Babel.txt?')
 print()
-lines = text.split('\n')
+lines = contents.split('\n')
 num_lines = len(lines)
 print(f"Number of lines: {num_lines}")
 print()
 
 print('2. How many sentences are there in the short story?')
 print()
-sentences = text.split('.') + text.split('?')
-num_sentences = len(sentences)
-print(f"Number of sentences: {num_sentences}")
+delete = ['(',')',':',';','\'','\"',',','-\n','...']
+replace_space = ['-','--','\n']
+for char in delete:
+    contents_processed = contents_processed.replace(char,'')
+for char in replace_space:
+    contents_processed = contents_processed.replace(char,' ')
+
+contents_processed = contents_processed.split('.'or'!'or'?')
+contents_processed.remove('')
+total_sentences = len(contents_processed)
+
+print(f"Number of sentences: {total_sentences}")
 print()
 
 print('3. How many times does the word “infinite” appear in the short story? How about the word “hexagon”?')
 print()
-num_infinite = text.count('infinite')
-num_hexagon = text.count('hexagon')
+num_infinite = contents.count('infinite')
+num_hexagon = contents.count('hexagon')
 print(f"Number of times 'infinite' appears: {num_infinite}")
 print(f"Number of times 'hexagon' appears: {num_hexagon}")
 print()
 
 print('4. What is the average sentence length (both average number of words and average number of characters in a sentence)?')
 print()
-words = text.split()
+words = contents.split()
 num_words = len(words)
-num_chars = len(text)
-avg_words = num_words / num_sentences
-avg_chars = num_chars / num_sentences
+num_chars = len(contents)
+avg_words = num_words / total_sentences
+avg_chars = num_chars / total_sentences
 print(f"Average sentence length (words): {round(avg_words)}")
 print(f"Average sentence length (characters): {round(avg_chars)}")
 print()
