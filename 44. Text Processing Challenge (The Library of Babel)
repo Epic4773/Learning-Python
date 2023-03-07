@@ -34,11 +34,32 @@ print()
 
 print('3. How many times does the word “infinite” appear in the short story? How about the word “hexagon”?')
 print()
-num_infinite = contents.count('infinite')
-num_hexagon = contents.count('hexagon')
+num_infinite = 0
+num_hexagon = 0
+total_chars = 0
+total_words = 0
+
+for sentence in contents_processed:
+  chars = len(sentence.strip())
+  words = len(sentence.strip().split())
+  total_chars += chars
+  total_words += words
+  for word in sentence.split():
+    if 'infinite' in word:
+      num_infinite += 1
+    if 'hexagon' in word:
+      num_hexagon += 1
+
+avg_chars = round(total_chars/total_sentences,1)
+avd_words = round(total_words/total_sentences,1)
+
 print(f"Number of times 'infinite' appears: {num_infinite}")
 print(f"Number of times 'hexagon' appears: {num_hexagon}")
 print()
+
+# The simpler way to do it would be:
+# num_infinite = contents.count('infinite')
+# num_hexagon = contents.count('hexagon')
 
 print('4. What is the average sentence length (both average number of words and average number of characters in a sentence)?')
 print()
