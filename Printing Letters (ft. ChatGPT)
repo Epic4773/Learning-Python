@@ -1,30 +1,35 @@
 import time
+import sys
 
-sentence = "Today we will be printing lettes, thanks to ChatGPT."
+sentence = "Today we will be printing letters, thanks to ChatGPT."
 bold_sentence = "\033[1m" + sentence + "\033[0m"
 print(bold_sentence)
 print()
 
 while True:
-    duration = float(input("Enter the number of seconds to print each letter: "))
-    case = input("Enter 'u' for uppercase or 'l' for lowercase letters: ")
-    print()
+  duration = float(input("Enter the number of seconds to print each letter: "))
+  case = input("Enter 'u' for uppercase or 'l' for lowercase letters: ")
+  print()
 
-    if case == 'u':
-        start = ord('A')
-        end = ord('Z')
-    elif case == 'l':
-        start = ord('a')
-        end = ord('z')
-    else:
-        print("Invalid input.")
-        continue
+  if case == 'u':
+    start = ord('A')
+    end = ord('Z')
+  elif case == 'l':
+    start = ord('a')
+    end = ord('z')
+  else:
+    print("Invalid input.")
+    continue
 
-    for i in range(start, end+1):
-        letter = chr(i)
-        print(letter, end="")
-        time.sleep(duration)
+  for i in range(start, end+1):
+    letter = chr(i)
+    sys.stdout.write(letter)
+    sys.stdout.flush()
+    time.sleep(duration)
 
-    choice = input("Enter 'y' to try again, or any other key to quit: ")
-    if choice != 'y':
-        break
+  print()
+
+  choice = input("Enter 'y' to try again, or any other key to quit: ")
+  if choice != 'y':
+    print('Have a good day!')
+    break
