@@ -2,10 +2,33 @@
 
 from die import Die
 
-die6 = Die(6)
-for i in range(10):
-  die6.roll_die()
+while True:
+  choice = input('Do you want to see the original code or the ChatGPT enhanced code? 1 = original and 2 = new code: ')
+  if choice == '1':
+    print('The following rolls a 6-sided die 10 times:')
+    die6 = Die(6)
+    for i in range(10):
+      die6.roll_die()
+    print()
 
-die20 = Die(20)
-for i in range(10):
-  die20.roll_die()
+    print('The following rolls a 20-sided die 10 times:')
+    die20 = Die(20)
+    for i in range(10):
+      die20.roll_die()
+    break
+  elif choice == '2':
+    while True:
+      sides = int(input('\nEnter the # of sides for the die (0 ends the program): '))
+      if sides == 0:
+        print('Have a good day!')
+        break
+
+      die = Die(sides)
+      print()
+
+      rolls = int(input('Enter the # of rolls: '))
+      for i in range(rolls):
+        die.roll_die()
+    break
+  else:
+    print("Invalid input. Please enter '1' or '2'.")
