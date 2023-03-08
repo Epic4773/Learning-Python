@@ -1,0 +1,16 @@
+# The open() function has two parameters, filename and mode.
+# When you don't specify mode, mode deafults to 'r', which means "read only".
+
+# 'w' means 'write' mode, meaning you can write text into a file.
+# If the file you are writing to does not exist, a new file will be created with filename.
+# BE CAREFUL! 'w' will overvrite the file you are writing to, meaning anything already in the file will be deleted.
+filename = 'programming.txt'
+with open(filename,'w') as file_object:
+  file_object.write('I love programming.\n')
+  file_object.write('Programming is challenging.\n')
+
+# 'a' means 'append' mode, meaning we can add to an existing file without overwriting (erasing) the previous contents.
+with open(filename,'a') as file_object:
+  file_object.write('With programming, you can read and write large data sets to text files.\n')
+  file_object.write('Games and apps can be created with programming.\n')
+  file_object.write('Monkeys are funny.\n')
