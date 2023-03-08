@@ -14,3 +14,9 @@ with open(filename,'a') as file_object:
   file_object.write('With programming, you can read and write large data sets to text files.\n')
   file_object.write('Games and apps can be created with programming.\n')
   file_object.write('Monkeys are funny.\n')
+
+# Classwork/Homework: Writing to text files
+# Write a while loop and user input that prompts users for their name and number of guests for a dinner reservation. When they make their reservation, print a greeting to them and let them know their table has been reserved.
+# Add a line to a text file called restaurant.txt that records their name and number of guests for their reservation. Make sure each entry appears on a new line.
+# Make sure you add a condition for your while loop stop when you don't want to add any more reservations.
+# Submit your work with at least 5 reservations written to restaurant.txt
