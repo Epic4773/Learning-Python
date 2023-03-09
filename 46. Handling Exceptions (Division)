@@ -14,6 +14,7 @@ while True:
     print("\n You can't divide by zero >:(")
   else:
     print(f"\n {first_number} divided by {second_number} is {answer}")
+print()
 
 try:
   with open('no_file.txt') as file:
