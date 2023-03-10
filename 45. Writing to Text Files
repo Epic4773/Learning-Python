@@ -15,8 +15,19 @@ with open(filename,'a') as file_object:
   file_object.write('Games and apps can be created with programming.\n')
   file_object.write('Monkeys are funny.\n')
 
-# Classwork/Homework: Writing to text files
+# Homework Assignment
 # Write a while loop and user input that prompts users for their name and number of guests for a dinner reservation. When they make their reservation, print a greeting to them and let them know their table has been reserved.
 # Add a line to a text file called restaurant.txt that records their name and number of guests for their reservation. Make sure each entry appears on a new line.
 # Make sure you add a condition for your while loop stop when you don't want to add any more reservations.
 # Submit your work with at least 5 reservations written to restaurant.txt
+
+while True:
+  reservation = input("Welcome to our restaurant! Please enter your name or 'quit' to exit: ")
+  if reservation == 'quit':
+    break
+  guests = input('How many guests will be joining you? ')
+  print(f"Thank you {reservation}! Your reservation for {guests} guests has been made.")
+  break
+  with open('restaurant.txt','a') as file:
+    file.write(f"{reservation} - {guests}\n")
+    print('Reservation added to the restaurant.txt file.')
