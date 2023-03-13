@@ -1,0 +1,19 @@
+import requests as req
+
+filename = "alice_in_wonderland.txt"
+url = "https://gutenberg.org/files/35688/35688-0.txt"
+directory = "text_files"
+filepath = directory + "/" + filename
+
+try:
+    with open(filepath, 'r') as file:
+        contents = file.read()
+except FileNotFoundError:
+    response = req.get(url)
+    with open(filepath, 'wb') as file:
+        file.write(response.content)
+    with open(filepath, 'r') as file:
+        contents = file.read()
+
+words = len(contents.split())
+print(f"There are approximately {words} words in Alice in Wonderland.")
