@@ -1,19 +1,37 @@
+# First Example
 import requests as req
-
 filename = "alice_in_wonderland.txt"
-url = "https://gutenberg.org/files/35688/35688-0.txt"
-directory = "text_files"
-filepath = directory + "/" + filename
+foldername = "text_files"
+filepath = foldername+"/"+filename
+url = "https://gutenberg.org/files/35688/35688.txt"
+# this will give us "text_files/alice_in_wonderland.txt" for the file path
 
 try:
-    with open(filepath, 'r') as file:
-        contents = file.read()
-except FileNotFoundError:
-    response = req.get(url)
-    with open(filepath, 'wb') as file:
-        file.write(response.content)
-    with open(filepath, 'r') as file:
-        contents = file.read()
+  with open(filepath) as file:
+    contents = file.read()
+except:
+  response = req.get(url)
+  with open(filepath,'wb+') as file:
+    file.write(response.content)
+    contents = file.read()
 
 words = len(contents.split())
-print(f"There are approximately {words} words in Alice in Wonderland.")
+print(f"There are approximately {words} words in {filename}")
+
+# Second Example
+filename = "wonderful_wizard_of_oz.txt"
+foldername = "text_files"
+filepath = foldername+"/"+filename
+url = "https://www.gutenberg.org/files/55/55-0.txt"
+
+try:
+  with open(filepath) as file:
+    contents = file.read()
+except:
+  response = req.get(url)
+  with open(filepath,'wb+') as file:
+    file.write(response.content)
+    contents = file.read()
+
+words = len(contents.split())
+print(f"There are approximately {words} words in {filename}")
