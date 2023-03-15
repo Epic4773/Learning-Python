@@ -1,0 +1,52 @@
+import json
+
+# json stands for Java Script Object Notation.
+# Json is a file format made specifically for programming languages like Python.
+
+numbers = [2, 3, 5, 7, 11, 13]
+with open('numbers.json','w') as file:
+  json.dump(numbers,file)
+with open('numbers.json') as file:
+  contents = json.load(file)
+print(contents)
+
+print()
+filename = 'username.json'
+'''
+try:
+  with open(filename) as file:
+    username = json.load(file)
+except FileNotFoundError:
+  username = input('What is your name? ')
+  with open(filename,'w') as file:
+    json.dump(username, file)
+    print(f"We'll remember you when you come back, {username}.")
+else:
+  print(f"Welcome back, {username}!")
+'''
+
+def greet_user():
+  # Greet the user by name
+  filename = 'username.json'
+  username = get_stored_username()
+  if username:
+    print(f"Welcome back, {username}!")
+  else:
+    username = input('What is your name? ')
+    with open(filename,'w') as file:
+      json.dump(username, file)
+    print(f"We'll remember you when you come back, {username}.")
+
+greet_user()
+
+def get_stored_username():
+  # Retrieve the stored username if available
+  # Returns the username. Returns None if username is not available.
+  filename = 'username.json'
+  try:
+    with open(filename) as file:
+      username = json.load(file)
+  except FileNotFoundError:
+    return None
+  else:
+    return username
