@@ -1,5 +1,15 @@
 # Use the following link to make a seperate file called "die.py": https://github.com/Epic4773/Learning-Python/blob/main/die.py
 
+# Original Code:
+# from die import Die
+# die6 = Die(6)
+# for i in range(10):
+#   die6.roll_die()
+# print()
+# die20 = Die(20)
+# for i in range(10):
+#   die20.roll_die()
+
 from die import Die
 
 while True:
