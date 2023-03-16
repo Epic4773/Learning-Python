@@ -1,3 +1,5 @@
+# Your goal is to refactor the test_report() function attached here. Copy the code in a new blank repl, and create a folder in that repl called json_files.
+
 import json
 
 def test_report():
@@ -12,7 +14,7 @@ def test_report():
             
     except FileNotFoundError:
         with open(folder+'/tests.json', 'w') as tests, open(folder+'/classes.json','w') as classes:
-            yes_no = input("would you like to add another class of test results? (y/n)")
+            yes_no = input("Would you like to add another class of test results (y/n)? ")
             class_list = []
             test_list = []
             
@@ -24,12 +26,13 @@ def test_report():
                 subject = input("What is the subject of the class? ")
                 class_list.append(subject)
                 num_students =int(input("How many students are in the class? "))
+                test = {}
                 for x in range(num_students):
                     name = input(f"What is the name of the {numbered[x]} student in {subject}? ")
-                    score = int(input(f"What score did {name} recieve on their test?"))
-                    key_value = {name:score}
-                    test_list.append(key_value)
-                yes_no = input("would you like to add another class of test results? (y/n)")
+                    score = int(input(f"What score did {name} recieve on their test? "))
+                    test[name] = score
+                test_list.append(test)
+                yes_no = input("would you like to add another class of test results (y/n)? ")
                 
             json.dump(test_list, tests)
             json.dump(class_list, classes)
@@ -39,7 +42,7 @@ def test_report():
             total = 0
             for student, score in test_list[class_num].items():
                 total+=score
-            avg = total/len(test_list)
+            avg = total/len(test_list[class_num])
             print(f"The avereage for {class_list[class_num]} is {avg}")
                 
     else:
@@ -48,7 +51,7 @@ def test_report():
             total = 0
             for student, score in test_list[class_num].items():
                 total+=score
-            avg = total/len(test_list)
-            print(f"The avereage for {class_list[class_num]} is {avg}")
+            avg = total/len(test_list[class_num])
+            print(f"The average for {class_list[class_num]} is {avg}.")
 
 test_report()
