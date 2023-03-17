@@ -1,23 +1,21 @@
-# Your goal is to refactor the test_report() function attached here. Copy the code in a new blank repl, and create a folder in that repl called json_files.
+# Your goal is to refactor the test_report() function attached here.
+# Copy the code in a new blank repl.
+# Create a folder in that repl called json_files.
 
 import json
 
-def test_report():
-    
+def test_report():    
     folder = 'json_files'
-    
     try:
         with open(folder+'/tests.json') as file:
             test_list = json.load(file)
         with open(folder+'/classes.json') as file:
             class_list = json.load(file)
-            
     except FileNotFoundError:
         with open(folder+'/tests.json', 'w') as tests, open(folder+'/classes.json','w') as classes:
             yes_no = input("Would you like to add another class of test results (y/n)? ")
             class_list = []
             test_list = []
-            
             while yes_no=='y':
                 numbered = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th',
                              '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th',
@@ -33,10 +31,8 @@ def test_report():
                     test[name] = score
                 test_list.append(test)
                 yes_no = input("would you like to add another class of test results (y/n)? ")
-                
             json.dump(test_list, tests)
             json.dump(class_list, classes)
-        
         print(f"Your test scores have been saved.")
         for class_num in range(len(class_list)):
             total = 0
@@ -44,7 +40,6 @@ def test_report():
                 total+=score
             avg = total/len(test_list[class_num])
             print(f"The avereage for {class_list[class_num]} is {avg}")
-                
     else:
         print(f"You're previous test scores have been loaded.")
         for class_num in range(len(class_list)):
