@@ -27,7 +27,7 @@ def test_report():
                 test = {}
                 for x in range(num_students):
                     name = input(f"What is the name of the {numbered[x]} student in {subject}? ")
-                    score = int(input(f"What score did {name} recieve on their test? "))
+                    score = int(input(f"What score did {name} receive on their test? "))
                     test[name] = score
                 test_list.append(test)
                 yes_no = input("would you like to add another class of test results (y/n)? ")
