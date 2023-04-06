@@ -1,7 +1,5 @@
-
-# Your goal is to refactor the test_report() function attached here.
-# Copy the code in a new blank repl.
-# Create a folder in that repl called json_files.
+# Your goal is to refactor the test_report() function attached here. In other words, simplify and fix this code.
+# Copy the code in a new blank repl and create a folder in that repl called json_files.
 
 import json
 
