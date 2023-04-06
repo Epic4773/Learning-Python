@@ -28,6 +28,8 @@ def test_report():
           test[name] = score
         test_list.append(test)
         yes_no = input("would you like to add another class of test results (y/n)? ")
+      else:
+        print('Okay, good day.')
       json.dump(test_list, tests)
       json.dump(class_list, classes)
     print(f"Your test scores have been saved.")
