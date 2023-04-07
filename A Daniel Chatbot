@@ -1,0 +1,29 @@
+# Who in the world makes a chatbot-style function and calls it "DanielGPT"?
+
+def chatbot():
+  print("DanielGPT: Hi, I'm DanielGPT!")
+  print()
+  input('You: ')
+  print()
+  print("DanielGPT: Let's begin by entering your name.")
+  print()
+  name = input('You: ')
+  print()
+  print(f"DanielGPT: Your name is {name}. Shall we continue?")
+  print()  
+  input(f"{name}: ")
+  print()
+  print("DanielGPT: You can end the program by entering 'bye'. For now, I can only give information about countries.")
+  while True:
+    geography_question = input(f"{name}: ")
+    if geography_question.lower() == 'bye':
+      print("DanielGPT: Goodbye! Have a great day")
+      break
+    elif geography_question.lower() == 'Abkhazia':
+      print('Abkhazia is not a member of the United Nations.')
+    elif geography_question.lower() == 'Afghanistan':
+      print('The capital of Afghanistan is Kabul. Leader: Hibatullah Akhundzada. Population: 38.9 million. Total Area: 652,230 km².')
+    else:
+      print("DanielGPT: I'm sorry, I don't have information about that country.")
+
+chatbot()
