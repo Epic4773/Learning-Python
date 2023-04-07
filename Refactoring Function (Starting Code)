@@ -19,7 +19,7 @@ def function():
   print()
 
   if(type(num_1) != int or type(num_2) != int or type(num_3) != int):
-    print('At least one of your values is not an integer.')
+    print('One or more of the values you entered is not an integer.')
     print('Please try again and type only integers.')
     return
 
