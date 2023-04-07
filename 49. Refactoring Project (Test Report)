@@ -2,82 +2,58 @@
 # Copy the code in a new blank repl.
 # Create a folder in that repl called json_files.
 import json
-#folder = json_files
 
-def test_report():
-  folder = 'json_files'
-  try:
-    with open(folder+'/tests.json') as file:
-      test_list = json.load(file)
-    with open(folder+'/classes.json') as file:
-      class_list = json.load(file)
-  except FileNotFoundError:
-    with open(folder+'/tests.json', 'w') as tests, open(folder+'/classes.json','w') as classes:
-      yes_no = input("Would you like to add another class of test results (y/n)? ")
-      class_list = []
-      test_list = []
-      while yes_no == 'y':
+def get_stored_test_data():
+    folder = 'json_files'
+    try:
+        with open(folder+'/tests.json') as file:
+            test_list = json.load(file)
+        with open(folder+'/classes.json') as file:
+            class_list = json.load(file)
+        return test_list, class_list
+    except FileNotFoundError:
+        return None, None
+
+def get_new_test_data():
+    folder = 'json_files'
+    yes_no = input("Would you like to add another class of test results (y/n)? ")
+    class_list = []
+    test_list = []
+    while yes_no == 'y':
         numbered = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th', '20th', '21st', '22nd', '23rd', '24th', '25th', '26th', '27th', '28th', '29th', '30th', '31st']
         subject = input("What is the subject of the class? ")
         class_list.append(subject)
         num_students =int(input("How many students are in the class? "))
         test = {}
         for x in range(num_students):
-          name = input(f"What is the name of the {numbered[x]} student in {subject}? ")
-          score = int(input(f"What score did {name} recieve on their test? "))
-          test[name] = score
+            name = input(f"What is the name of the {numbered[x]} student in {subject}? ")
+            score = int(input(f"What score did {name} recieve on their test? "))
+            test[name] = score
         test_list.append(test)
         yes_no = input("would you like to add another class of test results (y/n)? ")
-      else:
+    else:
         print('Okay, good day.')
-      json.dump(test_list, tests)
-      json.dump(class_list, classes)
+    with open(folder+'/tests.json', 'w') as tests, open(folder+'/classes.json','w') as classes:
+        json.dump(test_list, tests)
+        json.dump(class_list, classes)
     print(f"Your test scores have been saved.")
-    for class_num in range(len(class_list)):
-      total = 0
-      for student, score in test_list[class_num].items():
-        total += score
-      avg = total/len(test_list[class_num])
-      print(f"The avereage for {class_list[class_num]} is {avg}")
-  else:
-    print(f"You're previous test scores have been loaded.")
-    for class_num in range(len(class_list)):
-      total = 0
-      for student, score in test_list[class_num].items():
-        total += score
-      avg = total/len(test_list[class_num])
-      print(f"The average for {class_list[class_num]} is {avg}.")
-
-  return test_list, class_list
-
-test_report()
-
-# Refactored Version (Work In Progress)
-
-'''
-import json
-
-def get_stored_test_data():
-  
-
-def get_new_test_data():
-  
+    return test_list, class_list
 
 def compute_averages(test_list, class_list):
-  for class_num in range(len(class_list)):
-    total = 0
-    for student, score in test_list[class_list].items()
-      total += score
-  avg = total/len(test_list[class_list])
+    for class_num in range(len(class_list)):
+        total = 0
+        for student, score in test_list[class_num].items():
+            total += score
+        avg = total/len(test_list[class_num])
+        print(f"The average for {class_list[class_num]} is {avg}.")
 
 def test_report():
-  test_list, class_list = get_stored_test_data()
-  if test_list and class_list:
-    print(f'Your previous test scores have been loaded.')
-    compute_averages(test_list, class_list)
-  else:
-    test_list, class_list = get_new_test_data()
-    compute_averages(test_list, class_list)
+    test_list, class_list = get_stored_test_data()
+    if test_list and class_list:
+        print(f'Your previous test scores have been loaded.')
+        compute_averages(test_list, class_list)
+    else:
+        test_list, class_list = get_new_test_data()
+        compute_averages(test_list, class_list)
 
 test_report()
-'''
