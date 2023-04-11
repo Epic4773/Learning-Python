@@ -35,8 +35,6 @@ def greet_user():
     username = get_new_username()
     print(f"We'll remember you when you come back, {username}.")
 
-greet_user()
-
 def get_stored_username():
   # Retrieve the stored username if available.
   # Returns the username. Returns None if username is not available.
