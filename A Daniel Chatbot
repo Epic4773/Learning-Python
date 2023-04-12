@@ -1,13 +1,19 @@
-# Who in the world makes a chatbot-style function with very bad code and calls it "DanielGPT"?
+# Who in the world makes a chatbot-style function with very bad Python code and calls it "DanielGPT"?
+import random
+import time
+import sys
 
 def chatbot():
   print("DanielGPT: Hi, I'm DanielGPT!\n")
   input('You: ')
   print("\nDanielGPT: Let's begin by entering your name.\n")
   name = input('You: ')
-  print(f"\nDanielGPT: Your name is {name}. Shall we continue?\n")
+  if name in ['no', 'yes', 'ye', 'die', 'ok', 'okay']:
+    print('\nDanielGPT: That\'s not your name but okay. Shall we continue?\n')
+  else:
+    print(f"\nDanielGPT: Your name is {name}. Shall we continue?\n")
   input(f"{name}: ")
-  print("\nDanielGPT: You can end the program by entering 'bye'. For now, I can only give information about countries.\n")
+  print("\nDanielGPT: You can end the program by entering 'bye'. For now, I can only give information about countries and dependencies. You can also check out the built-in \"time\"/\"printing letters\" or \"roll\"/\"dice\" game.\n")
   while True:
     country = input(f"{name}: ")
     if country.lower() == 'bye':
@@ -409,7 +415,7 @@ def chatbot():
       print('\nDanielGPT: No info yet, enter another country.\n')
     elif country.lower() in ['tanzania', 'united republic of tanzania', 'zanzibar']:
       print('\nDanielGPT: No info yet, enter another country.\n')
-    elif country.lower() in ['thailand', 'kingdom of thailand']:
+    elif country.lower() in ['thailand', 'kingdom of thailand', 'itzthai', 'itsthai', 'thai']:
       print('\nDanielGPT: No info yet, enter another country.\n')
     elif country.lower() in ['togo', 'togolese republic']:
       print('\nDanielGPT: No info yet, enter another country.\n')
@@ -433,9 +439,9 @@ def chatbot():
       print('\nDanielGPT: No info yet, enter another country.\n')
     elif country.lower() in ['united arab emirates', 'emirates', 'the emirates', 'uae']:
       print('\nDanielGPT: No info yet, enter another country.\n')
-    elif country.lower() in ['uk', 'england', 'scotland', 'wales', 'northern ireland', 'united kingdom', 'united kingdom of great britain and northern ireland', 'great britain', 'britain']:
+    elif country.lower() in ['uk', 'england', 'scotland', 'wales', 'northern ireland', 'united kingdom', 'united kingdom of great britain and northern ireland', 'great britain', 'britain', 'godzilla', 'godzillafan2016', 'godzillafan 2016', 'godzilla fan 2016', 'gdzf2016', 'gzf2016', 'gdzf16', 'gzf16', 'invis']:
       print('\nDanielGPT: No info yet, enter another country.\n')
-    elif country.lower() in ['usa', 'united states of america', 'the united states of america', 'the united states', 'the us', 'the usa', 'us', 'america', 'united states']:
+    elif country.lower() in ['usa', 'united states of america', 'the united states of america', 'the united states', 'the us', 'the usa', 'us', 'america', 'united states', 'trad']:
       print('\nDanielGPT: No info yet, enter another country.\n')
     elif country.lower() in ['uruguay', 'eastern republic of uruguay', 'oriental republic of uruguay', 'republic of uruguay']:
       print('\nDanielGPT: No info yet, enter another country.\n')
@@ -457,7 +463,38 @@ def chatbot():
       print('\nDanielGPT: No info yet, enter another country.\n')
     elif country.lower() in ['zimbabwe', 'republic of zimbabwe']:
       print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['roll', 'dice', 'die']:
+      number = random.randint(1, 6)
+      print(f"\nDanielGPT: {number}\n")
+    elif country.lower() in ['time', 'print', 'letter', 'letters', 'easter egg']:
+      print('\nDanielGPT: Okay, we will be printing letters with a time feature. Ready?\n')
+      input(f"{name}: ")
+      while True:
+        duration = float(input(f"\nDanielGPT: Enter the number of seconds to print each letter: \n\n{name}: "))
+        case = input(f"\nDanielGPT: Now enter 'u' for uppercase or 'l' for lowercase letters: \n\n{name}: ")
+        if case == 'u':
+          start = ord('A')
+          end = ord('Z')
+          print()
+        elif case == 'l':
+          start = ord('a')
+          end = ord('z')
+          print()
+        else:
+          print("\nDanielGPT: Invalid input.")
+          continue
+        for i in range(start, end+1):
+          letter = chr(i)
+          sys.stdout.write(letter)
+          sys.stdout.flush()
+          time.sleep(duration)
+        print()
+        choice = input(f"\nDanielGPT: Enter 'y' to try again, or any other key to quit: \n\n{name}: ")
+        if choice != 'y':
+          print('\nOkay, thanks for trying out the printing letters feature! Back to the countries.\n')
     else:
-      print("\nDanielGPT: I'm sorry, either that isn\t a country or you misspelled.\n")
+      print("\nDanielGPT: I'm sorry, either that isn\'t a country or you misspelled.\n")
+#except:
+#  print('Due to your dangerous command, Mookie the Monkey has ended this program. Feel free to rerun it.')
 
 chatbot()
