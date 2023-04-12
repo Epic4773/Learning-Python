@@ -1,6 +1,5 @@
-# Your goal is to refactor the test_report() function attached here.
-# Copy the code in a new blank repl.
-# Create a folder in that repl called json_files.
+# Here is the original starting code from the teacher: https://github.com/Epic4773/Learning-Python/blob/main/Refactoring%20Project%20(Starting%20Code)
+
 import json
 
 def get_stored_test_data():
