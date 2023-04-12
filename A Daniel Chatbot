@@ -1,29 +1,463 @@
-# Who in the world makes a chatbot-style function and calls it "DanielGPT"?
+# Who in the world makes a chatbot-style function with very bad code and calls it "DanielGPT"?
 
 def chatbot():
-  print("DanielGPT: Hi, I'm DanielGPT!")
-  print()
+  print("DanielGPT: Hi, I'm DanielGPT!\n")
   input('You: ')
-  print()
-  print("DanielGPT: Let's begin by entering your name.")
-  print()
+  print("\nDanielGPT: Let's begin by entering your name.\n")
   name = input('You: ')
-  print()
-  print(f"DanielGPT: Your name is {name}. Shall we continue?")
-  print()  
+  print(f"\nDanielGPT: Your name is {name}. Shall we continue?\n")
   input(f"{name}: ")
-  print()
-  print("DanielGPT: You can end the program by entering 'bye'. For now, I can only give information about countries.")
+  print("\nDanielGPT: You can end the program by entering 'bye'. For now, I can only give information about countries.\n")
   while True:
-    geography_question = input(f"{name}: ")
-    if geography_question.lower() == 'bye':
-      print("DanielGPT: Goodbye! Have a great day")
+    country = input(f"{name}: ")
+    if country.lower() == 'bye':
+      print("\nDanielGPT: Goodbye! Have a great day.")
       break
-    elif geography_question.lower() == 'Abkhazia':
-      print('Abkhazia is not a member of the United Nations.')
-    elif geography_question.lower() == 'Afghanistan':
-      print('The capital of Afghanistan is Kabul. Leader: Hibatullah Akhundzada. Population: 38.9 million. Total Area: 652,230 km².')
+    elif country.lower() in ['abkhazia', 'republic of abkhazia']:
+      print('\nDanielGPT: Abkhazia is not a member of the United Nations. It is a partially recognized state in the South Caucasus.\n')
+    elif country.lower() in ['afghanistan', 'islamic emirate of afghanistan', 'iea', 'islamic republic of afghanistan', 'ira']:
+      print('\nDanielGPT: The capital of Afghanistan is Kabul. Leader: Hibatullah Akhundzada (Taliban leader). Population: 41.98 million. Total Area: 652860 km² (252070 mi²). The de facto ruling government is the Islamic Emirate of Afghanistan but has not been recognized by any state and the United Nations continues to recognize the Islamic Republic of Afghanistan as the de jure government of Afghanistan.\n')
+    elif country.lower() in ['akrotiri', 'dhekelia', 'akrotiri and dhekelia']:
+      print('\nDanielGPT: Akrotiri and Dhekelia is not a member of the United Nations. It is a British Overseas Territory in Cyprus.\n')
+    elif country.lower() in ['åland', 'aland']:
+      print('\nDanielGPT: Åland Islands is not a member of the United Nations. It is an autonomous region of Finland.\n')
+    elif country.lower() in ['albania', 'republic of albania']:
+      print('\nDanielGPT: The capital of Albania is Tirana. Leader: Edi Rama. Population: 2.83 million. Total Area: 28748 km² (11100 mi²).\n')
+    elif country.lower() in ['algeria', 'republic of algeria', 'people\'s democratic republic of algeria']:
+      print('\nDanielGPT: The capital of Algeria is Tirana. Leader: Abdelmadjid Tebboune. Population: 45.45 million. Total Area: 2381741 km² (919595 mi²).\n')
+    elif country.lower() in ['american samoa', 'as']:
+      print('\nDanielGPT: American Somoa is not a member of the United Nations. It is an unincorporated territory of the United States located in the South Pacific Ocean.\n')
+    elif country.lower() in ['andorra', 'principality of andorra']:
+      print('\nDanielGPT: The capital of Andorra is Andorra la Vella. Leader: Xavier Espot Zamora. Population: 80 thousand. Total Area: 468 km² (181 mi²).\n')
+    elif country.lower() in ['angola', 'republic of angola']:
+      print('\nDanielGPT: The capital of Angola is Luanda. Leader: João Lourenço. Population: 36.43 million. Total Area: 1246700 km² (481350 mi²).\n')
+    elif country.lower() == 'anguilla':
+      print('\nDanielGPT: American Somoa is not a member of the United Nations. It is a British Overseas Territory in the Caribbean.\n')
+    elif country.lower() == 'antarctica':
+      print('\nDanielGPT: Antarctica is not a member of the United Nations. It is Earth\'s southernmost and least-populated continent. Argentina, Australia, Chile, France, New Zealand, Norway, and the United Kingdom maintain territorial claims in Antarctica.\n')
+    elif country.lower() in ['antigua', 'barbuda', 'antigua and barbuda', 'barbuda and antigua']:
+      print('\nDanielGPT: The capital of Antigua and Barbuda is St. John\'s. Leader: Gaston Browne. Population: 94 thousand. Total Area: 442 km² (171 mi²).\n')
+    elif country.lower() in ['argentina', 'argentine republic', 'messi', 'leo messi']:
+      print('\nDanielGPT: The capital of Argentina is Buenos Aires. Leader: Alberto Fernández. Population: 45.7 million. Total Area: 2780400 km² (1073500 mi²).\n')
+    elif country.lower() in ['armenia', 'republic of armenia']:
+      print('\nDanielGPT: The capital of Armenia is Yerevan. Leader: Armen Sargsyan. Population: 2.77 million. Total Area: 29743 km² (11483 mi²).\n')
+    elif country.lower() in ['artsakh', 'republic of artsakh', 'nagorno-karabakh', 'nagorno-karabakh republic', 'nagorno karabakh', 'nagorno karabakh republic']:
+      print('\nDanielGPT: Artsakh is not a member of the United Nations. It is a breakaway state in the South Caucasus whose territory is internationally recognised as part of Azerbaijan.\n')
+    elif country.lower() == 'aruba':
+      print('\nDanielGPT: Aruba is not a member of the United Nations. It is a constituent country of the Kingdom of the Netherlands in the mid-south of the Caribbean Sea.\n')
+    elif country.lower() in ['ashmore', 'cartier', 'cartier islands', 'ashmore and cartier islands']:
+      print('\nDanielGPT: Ashmore and Cartier Islands is not a member of the United Nations. It is an uninhabited external territory of Australia in the Indian Ocean.\n')
+    elif country.lower() in ['australia', 'commonwealth of australia', 'sol', 'billiam', 'kyle', 'marilakos', 'kralled', 'gliath']:
+      print('\nDanielGPT: The capital of Australia is Canberra. Leader: Scott Morrison. Population: 26.37 million. Total Area: 7692024 km² (2969907 mi²).\n')
+    elif country.lower() in ['austria', 'republic of austria', 'anschluss']:
+      print('\nDanielGPT: The capital of Austria is Vienna. Leader: Alexander Schallenberg. Population: 8.95 million. Total Area: 83879 km² (32383 mi²).\n')
+    elif country.lower() in ['azerbaijan', 'republic of azerbaijan']:
+      print('\nDanielGPT: The capital of Azerbaijan is Baku. Leader: Ilham Aliyev. Population: 10.4 million. Total Area: 86600 km² (33400 mi²).\n')
+    elif country.lower() in ['bahamas', 'the bahamas', 'commonwealth of bahamas', 'commonwealth of the bahamas', 'bahamas, the']:
+      print('\nDanielGPT: The capital of Bahamas is Nassau. Leader: Philip Davis. Population: 412 thousand. Total Area: 13940 km² (5382 mi²).\n')
+    elif country.lower() in ['bahrain', 'kingdom of bahrain']:
+      print('\nDanielGPT: The capital of Bahrain is Manama. Leader: Salman bin Hamad bin Isa Al Khalifa. Population: 1.48 million. Total Area: 760 km² (293 mi²).\n')
+    elif country.lower() in ['bangladesh', 'people\'s republic of bangladesh', 'republic of bangladesh']:
+      print('\nDanielGPT: The capital of Bangladesh is Dhaka. Leader: Abdul Hamid. Population: 172.55 million. Total Area: 147570 km² (56827 mi²).\n')
+    elif country.lower() == 'barbados':
+      print('\nDanielGPT: The capital of Barbados is Bridgetown. Leader: Mia Mottley. Population: 281 thousand. Total Area: 430 km² (166 mi²).\n')
+    elif country.lower() in ['belarus', 'republic of belarus']:
+      print('\nDanielGPT: The capital of Belarus is Minsk. Dictator: Aleksandr Lukashenko. Population: 9.5 million. Total Area: 207600 km² (80281 mi²).\n')
+    elif country.lower() in ['belgium', 'kingdom of belgium']:
+      print('\nDanielGPT: The capital of Belgium is Brussels. Leader: Alexander De Croo. Population: 11.67 million. Total Area: 30689 km² (11849 mi²).\n')
+    elif country.lower() == 'belize':
+      print('\nDanielGPT: The capital of Belize is Belmopan. Leader: Johnny Briceño. Population: 409 thousand. Total Area: 22966 km² (8867 mi²).\n')
+    elif country.lower() in ['benin', 'republic of benin']:
+      print('\nDanielGPT: The capital of Benin is Porto-Novo. Leader: Patrice Talon. Population: 13.63 million. Total Area: 114763 km² (44383 mi²).\n')
+    elif country.lower() in ['bermuda', 'bermuda triangle', 'triangle', 'illuminati']:
+      print('\nDanielGPT: Bermuda is not a member of the United Nations. It is a British Overseas Territory in the North Atlantic Ocean. And no, it\'s not haunted.\n')
+    elif country.lower() in ['bhutan', 'kingdom of bhutan']:
+      print('\nDanielGPT: The capital of Bhutan is Thimphu. Leader: Lotay Tshering. Population: 786 thousand. Total Area: 38394 km² (14824 mi²).\n')
+    elif country.lower() == 'bir tawil':
+      print('\nDanielGPT: Bir Tawil is not a member of the United Nations. It is an area of land along the border between Egypt and Sudan, which is uninhabited and claimed by neither country.\n')
+    elif country.lower() in ['bolivia', 'plurinational state of bolivia']:
+      print('\nDanielGPT: The capital of Bolivia is Sucre (constitutional), La Paz (administrative). Leader: Luis Arce. Population: 12.34 million. Total Area: 1098581 km² (424162 mi²).\n')
+    elif country.lower() == 'bonaire':
+      print('\nDanielGPT: Bonaire is not a member of the United Nations. It is a Dutch island in the Leeward Antilles in the Caribbean Sea.\n')
+    elif country.lower() in ['bosnia', 'herzegovina', 'bosnia and herzegovina', 'herzegovina and bosnia', 'federation of bosnia and herzegovina', 'republika srpska', 'srpska', 'brčko district', 'brcko district', 'brčko']:
+      print('\nDanielGPT: The capital of Bosnia and Herzegovina is Sarajevo. Leader: Šefik Džaferović, Željko Komšić, and Milorad Dodik. Population: 3.21 million. Total Area: 51209 km² (19784 mi²).\n')
+    elif country.lower() in ['botswana', 'republic of botswana']:
+      print('\nDanielGPT: The capital of Botswana is Gaborone. Leader: Mokgweetsi Masisi. Population: 2.66 million. Total Area: 581730 km² (224610 mi²).\n')
+    elif country.lower() in ['bouvet', 'bouvet island']:
+      print('\nDanielGPT: Bouvet Island is not a member of the United Nations. It is an island and dependency of Norway situated in the South Atlantic Ocean, and declared an uninhabited protected nature reserve.\n')
+    elif country.lower() in ['brazil', 'federative republic of brazil', 'pele', 'neymar', 'bolsonaro', 'jair bolsonaro']:
+      print('\nDanielGPT: The capital of Brazil is Brasília. Leader: Luiz Inácio Lula da Silva. Population: 216.14 million. Total Area: 8515767 km² (3287963 mi²).\n')
+    elif country.lower() in ['biot', 'british indian ocean territory']:
+      print('\nDanielGPT: British Indian Ocean Territory is not a member of the United Nations. It is an Overseas Territory of the United Kingdom in the Indian Ocean.\n')
+    elif country.lower() in ['bvi', 'british virgin islands ']:
+      print('\nDanielGPT: British Virgin Islands is not a member of the United Nations. They are a British Overseas Territory in the Caribbean.\n')
+    elif country.lower() in ['brunei', 'brunei darussalam']:
+      print('\nDanielGPT: The capital of Brunei is Bandar Seri Begawan. Leader: Hassanal Bolkiah. Population: 451 thousand. Total Area: 5765 km² (2226 mi²).\n')
+    elif country.lower() in ['bulgaria', 'republic of bulgaria']:
+      print('\nDanielGPT: The capital of Bulgaria is Sofia. Leader: Rumen Radev. Population: 6.7 million. Total Area: 110910 km² (42750 mi²).\n')
+    elif country.lower() in ['burkina faso', 'burkina', 'faso', 'faso burkina']:
+      print('\nDanielGPT: The capital of Burkina Faso is Ouagadougou. Leader: Roch Marc Christian Kaboré. Population: 23.11 million. Total Area: 274200 km² (105900 mi²).\n')
+    elif country.lower() in ['burundi', 'republic of rurundi']:
+      print('\nDanielGPT: The capital of Burundi is Gitega. Leader: Évariste Ndayishimiye. Population: 13.15 million. Total Area: 27834 km² (10739 mi²).\n')
+    elif country.lower() in ['cambodia', 'kingdom of cambodia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['cameroon', 'republic of cameroon']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['canada', 'dominion of canada']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['cape', 'cabo', 'verde', 'cape verde', 'cabo verde', 'republic of cabo verde', 'republic of cabo verde']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['car', 'central african republic']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['chad', 'republic of chad']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['chile', 'republic of chile', 'chili']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['china', 'proc', 'prc', 'ccp' 'people\'s republic of china', 'hong kong', 'macao']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['colombia', 'republic of colombia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['comoros', 'union of the comoros']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['drc', 'dr congo', 'congo-kinshasa', 'congo kinshasa', 'democratic republic of the congo', 'congo, democratic republic of the' 'congo, democratic republic of', 'congo, democratic republic']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['rc', 'congo', 'the congo', 'congo republic', 'congo-brazzaville', 'congo brazzaville', 'republic of the congo', 'the republic of the congo', 'congo, republic of the', 'congo, republic of']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['cook', 'cook islands']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['coral sea', 'coral sea islands']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['costa rica', 'republic of costa rica', 'costa', 'rica']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['croatia', 'republic of croatia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['cuba', 'republic of cuba']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['curaçao', 'curacao']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['cyprus', 'republic of cyprus']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['czechia', 'czech republic', 'bohemia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['denmark', 'kingdom of denmark']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['djibouti', 'republic of djibouti']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['dominica', 'commonwealth of dominica']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() == 'dominican republic':
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['east timor', 'timor-leste', 'timor leste', 'democratic republic of timor-leste', 'democratic republic of timor leste']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['easter', 'easter island']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['ecuador', 'republic of ecuador']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['egypt', 'republic of egypt', 'arab republic of egypt']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['el salvador', 'salvador', 'republic of el salvador']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['equatorial guinea', 'republic of equatorial guinea', 'equatoguinea','reg']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['eritrea', 'state of eritrea']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['estonia', 'republic estonia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['eswatini', 'kingdom of eswatini', 'swaziland', 'kingdom of swaziland']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['ethiopia', 'federal democratic republic of ethiopia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['fiji', 'republic of fiji']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['finland', 'republic of finland']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['france', 'french republic']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['gabon', 'gabonese republic']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['gambia', 'the gambia', 'republic of the gambia', 'the republic of the gambia', 'gambia, the']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['georgia', 'adjara']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['germany', 'federal republic of germany', 'calvin', 'calno', 'neo']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['ghana', 'republic of ghana']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['greece', 'grease', 'hellenic republic', 'hellenica', 'athens', 'sparta', 'mount athos']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() == 'grenada':
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['guatemala', 'republic of guatemala']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['guinea', 'republic of guinea', 'guinea-conakry', 'guinea conakry']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['guinea-bissau', 'guinea bissau', 'republic of guinea-bissau', 'republic of guinea bissau']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['guyana', 'republic of guyana', 'co-operative republic of guyana', 'co operative republic of guyana']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['haiti', 'republic of haiti', 'hayti']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['honduras', 'republic of honduras',]:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() == 'hungary':
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['iceland', 'republic of iceland', 'constitution of iceland', 'constitution of the republic of iceland', 'the constitution of the republic of iceland']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['india', 'republic of india']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['indonesia', 'republic of indonesia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['iran', 'i ran', 'persia', 'islamic republic of iran']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['iraq', 'i raq', 'republic of iraq', 'kurdistan', 'kurdistan region']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['ireland', 'republic of ireland', 'éire', 'eire']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['israel', 'state of israel', 'jerusalem']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['italy', 'italian republic', 'republic of italy']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['ivory coast', 'republic of côte d\'ivoire', 'republic of cote d\'ivoire', 'côte d\'ivoire', 'cote d\'ivoire']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() == 'jamaica':
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['japan', 'nihon', 'nippon', 'weeaboo', 'weeb']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['jordan', 'hashemite kingdom of jordan', 'kingdom of jordan']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['kazakhstan', 'republic of kazakhstan']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['kenya', 'republic of kenya']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['kiribati', 'republic of kiribati']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['north korea', 'korea, north', 'dprk', 'democratic people\'s republic of korea', 'kim', 'kim jong un', 'kim jong-un']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['south korea', 'korea, south', 'rok', 'republic of korea']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['kosovo', 'republic of kosovo']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['kuwait', 'state of kuwait']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['kyrgyzstan', 'kyrgyz', 'kyrgyz republic']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['laos', 'lao people\'s democratic republic', 'lao']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['latvia', 'republic of latvia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['lebanon', 'lebanese republic', 'republic of lebanon']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['lesotho', 'kingdom of lesotho']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['liberia', 'republic of liberia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['libya', 'state of libya']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['liechtenstein', 'principality of liechtenstein']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['lithuania', 'republic of lithuania']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['luxembourg', 'grand duchy of luxembourg']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['madagascar', 'republic of madagascar', 'penguins of madagascar']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['malawi', 'republic of malawi']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() == 'malaysia':
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['maldives', 'republic of maldives']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['mali', 'republic of mali']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['malta', 'republic of malta']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['marshall', 'marshall islands', 'republic of the marshall islands']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['mauritania', 'islamic republic of mauritania', 'irm']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['mauritius', 'republic of mauritius', 'rodrigues']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['mexico', 'united mexican states', 'ums']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['micronesia', 'micronesia, federated states of', 'federated states of micronesia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['moldova', 'republic of moldova']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['monaco', 'principality of monaco']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() == 'mongolia':
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() == 'montenegro':
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['morocco', 'kingdom of morocco', 'bumblebee']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['mozambique', 'republic of mozambique']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['myanmar', 'burma', 'republic of the union of myanmar']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['namibia', 'republic of namibia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['nauru', 'republic of nauru', 'pleasant island']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['nepal', 'federal democratic republic of nepal']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['netherlands', 'the netherlands', 'kingdom of the netherlands', 'dage', 'dagestan', 'nato']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['new zealand', 'zealand']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['nicaragua', 'republic of nicaragua']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['niger', 'the niger', 'republic of the niger', 'republic of niger']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['nigeria', 'federal republic of nigeria']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() == 'niue':
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['north macedonia', 'macedonia', 'republic of north macedonia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['northern cyprus', 'turkish republic of northern cyprus']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['norway', 'kingdom of norway', 'svalbard', 'jan mayen']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['oman', 'sultanate of oman']:
+      print('\nDanielGPT: No info yet, enter another country.\n') 
+    elif country.lower() in ['pakistan', 'islamic republic of pakistan']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['palau', 'republic of palau']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['palestine', 'state of palestine']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['panama', 'republic of panama']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['papua', 'papau new guinea', 'independent state of papua new guinea']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['paraguay', 'republic of paraguay']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['paru', 'republic of peru']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['philippines', 'the philippines', 'republic of the philippines']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['poland', 'republic of poland']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['portugal', 'portuguese republic']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['qatar', 'state of qatar']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['romania', 'transylvania']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['russia', 'russian federation']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['rwanda', 'republic of rwanda']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['saint kitts', 'kitts', 'nevis', 'saint kitts and nevis', 'federation of saint christopher and nevis']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['saint lucia', 'lucia', 'iouanalao', 'hewanorra']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['saint vincent and the grenadines', 'saint vincent', 'vincent', 'grenadines', 'the grenadines']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['samoa', 'western samoa', 'independent state of samoa']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['san marino', 'republic of san marino', 'marino', 'most serene republic,' 'most serene republic of san marino']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['sao tome', 'principe', 'principe and sao tome' 'são tomé', 'príncipe', 'príncipe and são tomé', 'democratic republic of são tomé and príncipe']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['saudi arabia', 'arabia', 'ksa', 'kingdom of saudi arabia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['senegal', 'republic of senegal']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['serbia', 'republic of serbia', 'vojvodina', 'metohija']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['seychelles', 'republic of seychelles']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['sierra leone', 'republic of sierra leone', 'sierra', 'leone']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['singapore', 'republic of singapore', 'singapoor']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['slovakia', 'slovak republic']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['slovenia', 'republic of slovenia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['solomon islands', 'solomon', 'si']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['somalia', 'pirates', 'federal republic of somalia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['somaliland', 'republic of somaliland']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['south africa', 'rsa', 'republic of south africa']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['south ossetia', 'ossetia', 'republic of south ossetia–the state of alania', 'republic of south ossetia', 'the state of alania', 'state of alania', 'alania']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['south sudan', 'republic of south sudan', 'sudan, south']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['spain', 'kingdom of spain']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['sri lanka', 'lanka', 'democratic socialist republic of sri lanka', 'ceylon']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['sudan', 'republic of the sudan', 'north sudan']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['suriname', 'republic of suriname']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['sweden', 'kingdom of sweden']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['switzerland', 'swiss confederation', 'swiss', 'swiss cheese', 'swiss chocolate']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['syria', 'syrian arab republic', 'syrian national coalition', 'rojava']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['taiwan', 'republic of china', 'roc', 'chinese taipei', 'taipei']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['tajikistan', 'republic of tajikistan', 'gorno-badakhshan', 'gorno badakhshan']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['tanzania', 'united republic of tanzania', 'zanzibar']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['thailand', 'kingdom of thailand']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['togo', 'togolese republic']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['tongo', 'kingdom of tonga']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['transnistria', 'pmr', 'pridnestrovian moldavian republic']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['trinidad and tobago', 'trinidad', 'tobago', 'republic of trinidad and tobago', 'tobago and trinidad']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['tunisia', 'republic of tunisia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['turkiye', 'turkey', 'türkiye', 'republic of türkiye', 'republic of turkey']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() == 'turkmenistan':
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() == 'tuvalu':
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['uganda', 'republic of uganda']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['Ukraine', 'Donetsk', 'Kherson', 'Luhansk', 'Sevastopol', 'Zaporizhzhia', 'Crimea']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['united arab emirates', 'emirates', 'the emirates', 'uae']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['uk', 'england', 'scotland', 'wales', 'northern ireland', 'united kingdom', 'united kingdom of great britain and northern ireland', 'great britain', 'britain']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['usa', 'united states of america', 'the united states of america', 'the united states', 'the us', 'the usa', 'us', 'america', 'united states']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['uruguay', 'eastern republic of uruguay', 'oriental republic of uruguay', 'republic of uruguay']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['uzbekistan', 'republic of uzbekistan', 'karakalpakstan']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['vanuatu', 'republic of vanuatu']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['vatican city', 'vatican city state', 'vatican', 'the vatican', 'holy see']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['venezuela', 'bolivarian republic of venezuela']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['vietnam', 'nam', '\'nam', 'socialist republic of vietnam', 'srv', 'viet nam']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['western sahara', 'sahrawi', 'sahrawi arab democratic republic']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['yemen', 'republic of yemen']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['zambia', 'republic of zambia']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['zimbabwe', 'republic of zimbabwe']:
+      print('\nDanielGPT: No info yet, enter another country.\n')
     else:
-      print("DanielGPT: I'm sorry, I don't have information about that country.")
+      print("\nDanielGPT: I'm sorry, either that isn\t a country or you misspelled.\n")
 
 chatbot()
