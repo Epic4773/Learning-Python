@@ -9,6 +9,8 @@
 # — Reproduce the exact functionality of the original program (as shown below)
 # — Run completely based off of a call to ONE master function that then makes use of your other refactored functions (just like our examples in class)
 
+# Daniel's Answer: https://github.com/Epic4773/Learning-Python/blob/main/50.%20Refactoring%20Function%20(Maximum%20Value)
+
 def function():
   print('This program will tell you the maximum value of three integers.')
   print()
