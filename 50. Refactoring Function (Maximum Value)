@@ -1,35 +1,4 @@
-# The goal of refactoring is to make your program cleaner, more readable, more efficient, and easier to debug and modify. Below is a program called "function".
-# Your task is to identify the individual tasks exhibited in the program and to refactor the program into smaller, more readable functions.
-# Choose different names other than "function" for all of your functions. It is up to you how you refactor the function, but consider the following rubric which will be used to grade your quiz submission:
-# Your program should . . .
-# — Be refactored into a minimum of four total separate functions
-# — Be refactored such that each refactored function contains one or more separate and discrete tasks of the original function
-# — Have readable and sensible function names that match the utility of each function
-# — Run without syntax errors
-# — Reproduce the exact functionality of the original program (as shown below)
-# — Run completely based off of a call to ONE master function that then makes use of your other refactored functions (just like our examples in class)
-
-# The goal of refactoring is to make your program cleaner, more readable, more efficient, and easier to debug and modify. Below is a program called "function".
-# Your task is to identify the individual tasks exhibited in the program and to refactor the program into smaller, more readable functions.
-# Choose different names other than "function" for all of your functions. It is up to you how you refactor the function, but consider the following rubric which will be used to grade your quiz submission:
-# Your program should . . .
-# — Be refactored into a minimum of four total separate functions
-# — Be refactored such that each refactored function contains one or more separate and discrete tasks of the original function
-# — Have readable and sensible function names that match the utility of each function
-# — Run without syntax errors
-# — Reproduce the exact functionality of the original program (as shown below)
-# — Run completely based off of a call to ONE master function that then makes use of your other refactored functions (just like our examples in class)
-
-# The goal of refactoring is to make your program cleaner, more readable, more efficient, and easier to debug and modify. Below is a program called "function".
-# Your task is to identify the individual tasks exhibited in the program and to refactor the program into smaller, more readable functions.
-# Choose different names other than "function" for all of your functions. It is up to you how you refactor the function, but consider the following rubric which will be used to grade your quiz submission:
-# Your program should . . .
-# — Be refactored into a minimum of four total separate functions
-# — Be refactored such that each refactored function contains one or more separate and discrete tasks of the original function
-# — Have readable and sensible function names that match the utility of each function
-# — Run without syntax errors
-# — Reproduce the exact functionality of the original program (as shown below)
-# — Run completely based off of a call to ONE master function that then makes use of your other refactored functions (just like our examples in class)
+# Here is the original starting code from the teacher: https://github.com/Epic4773/Learning-Python/blob/main/Refactoring%20Function%20(Starting%20Code)
 
 def get_input():
   while True:
