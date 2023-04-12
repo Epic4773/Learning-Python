@@ -9,31 +9,67 @@
 # — Reproduce the exact functionality of the original program (as shown below)
 # — Run completely based off of a call to ONE master function that then makes use of your other refactored functions (just like our examples in class)
 
-def function():
-  print('This program will tell you the maximum value of three integers.')
-  print()
+# The goal of refactoring is to make your program cleaner, more readable, more efficient, and easier to debug and modify. Below is a program called "function".
+# Your task is to identify the individual tasks exhibited in the program and to refactor the program into smaller, more readable functions.
+# Choose different names other than "function" for all of your functions. It is up to you how you refactor the function, but consider the following rubric which will be used to grade your quiz submission:
+# Your program should . . .
+# — Be refactored into a minimum of four total separate functions
+# — Be refactored such that each refactored function contains one or more separate and discrete tasks of the original function
+# — Have readable and sensible function names that match the utility of each function
+# — Run without syntax errors
+# — Reproduce the exact functionality of the original program (as shown below)
+# — Run completely based off of a call to ONE master function that then makes use of your other refactored functions (just like our examples in class)
 
-  num_1 = input('Please enter your first number: ')
-  num_2 = input('Please enter your second number: ')
-  num_3 = input('Please enter your third number: ')
-  print()
+# The goal of refactoring is to make your program cleaner, more readable, more efficient, and easier to debug and modify. Below is a program called "function".
+# Your task is to identify the individual tasks exhibited in the program and to refactor the program into smaller, more readable functions.
+# Choose different names other than "function" for all of your functions. It is up to you how you refactor the function, but consider the following rubric which will be used to grade your quiz submission:
+# Your program should . . .
+# — Be refactored into a minimum of four total separate functions
+# — Be refactored such that each refactored function contains one or more separate and discrete tasks of the original function
+# — Have readable and sensible function names that match the utility of each function
+# — Run without syntax errors
+# — Reproduce the exact functionality of the original program (as shown below)
+# — Run completely based off of a call to ONE master function that then makes use of your other refactored functions (just like our examples in class)
 
+def get_input():
+  while True:
+    try:
+      num_1 = int(input('\nPlease enter your first number: '))
+      num_2 = int(input('Please enter your second number: '))
+      num_3 = int(input('Please enter your third number: '))
+      return num_1, num_2, num_3
+    except ValueError:
+      print('\nAt least one of your values is not an integer.')
+      print('Please try again and type only integers.')
+
+def check_int_type(num_1, num_2, num_3):
   if(type(num_1) != int or type(num_2) != int or type(num_3) != int):
-    print('At least one of your values is not an integer.')
+    print('\nAt least one of your values is not an integer.')
     print('Please try again and type only integers.')
-    return
+    return False
+  return True
 
+def check_maximum(num_1, num_2, num_3):
   if num_1 > num_2 and num_1 > num_3:
     maximum = num_1
   elif num_2 > num_1 and num_2 > num_3:
     maximum = num_2
   else:
     maximum = num_3
+  return maximum
 
-  print()
+def even_odd(maximum):
   if(maximum%2 == 0):
-    print(f"The max value is the even number {maximum}.")
+    print(f"\nThe max value is the even number {maximum}.")
   else:
-    print(f"The max value is the odd number {maximum}.")
+    print(f"\nThe max value is the odd number {maximum}.")
 
-function()
+def max_val():
+  print('This program will tell you the maximum value of 3 integers.')
+  num_1, num_2, num_3 = get_input()
+  if not check_int_type(num_1, num_2, num_3):
+    return
+  maximum = check_maximum(num_1, num_2, num_3)
+  even_odd(maximum)
+
+max_val()
