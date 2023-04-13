@@ -1,19 +1,32 @@
 # Who in the world makes a chatbot-style function with very bad Python code and calls it "DanielGPT"?
+from colorama import init, Fore, Style
 import random
 import time
 import sys
 
 def chatbot():
-  print("DanielGPT: Hi, I'm DanielGPT!\n")
-  input('You: ')
-  print("\nDanielGPT: Let's begin by entering your name.\n")
-  name = input('You: ')
+  init()
+  colors = {
+    'red': Fore.RED,
+    'green': Fore.GREEN,
+    'yellow': Fore.YELLOW,
+    'blue': Fore.BLUE,
+    'magenta': Fore.MAGENTA,
+    'cyan': Fore.CYAN,
+    'white': Fore.WHITE,
+  }
+  our_color = input('DanielGPT: Before be begin, choose a color for the text to be (red, green, yellow, blue, magenta, cyan, (default) white): \n\nYou: ')
+  color_code = colors.get(our_color.lower(), Fore.RESET)
+  if our_color not in colors:
+    input('\nDanielGPT: Sorry, that\'s not an option, I\'ll default to white.\n\nYou: Okay, you\'re awesome.\n\nDanielGPT: I know, right?\n\nYou: ')
+  name = input(color_code + "\nDanielGPT: Nice, so now enter your name.\n\nYou: ")
   if name in ['no', 'yes', 'ye', 'die', 'ok', 'okay']:
-    print('\nDanielGPT: That\'s not your name but okay. Shall we continue?\n')
+    print('\nDanielGPT: That\'s not your name but okay. Shall we continue?')
+  if name == '':
+    print('\nDanielGPT: What?\n')
   else:
-    print(f"\nDanielGPT: Your name is {name}. Shall we continue?\n")
-  input(f"{name}: ")
-  print("\nDanielGPT: You can end the program by entering 'bye'. For now, I can only give information about countries and dependencies. You can also check out the built-in \"time\"/\"printing letters\" or \"roll\"/\"dice\" game.\n")
+    input(f"\nDanielGPT: Your name is {name}. Shall we continue?\n\n{name}: ")
+  print("\nDanielGPT: You can end the program by entering 'bye'. For now, I can only give information about countries and dependencies. You can also check out the built-in \"time\"/\"printing letters\" or \"roll\"/\"dice\" features.\n")
   while True:
     country = input(f"{name}: ")
     if country.lower() == 'bye':
@@ -464,7 +477,10 @@ def chatbot():
     elif country.lower() in ['zimbabwe', 'republic of zimbabwe']:
       print('\nDanielGPT: No info yet, enter another country.\n')
     elif country.lower() in ['roll', 'dice', 'die']:
-      number = random.randint(1, 6)
+      sides = int(input(f"\nDanielGPT: How many sides do you want the die to have?\n\n{name}: "))
+      number = random.randint(1, sides)
+      if type(sides) != int:
+        print('DanielGPT: That\'s not a number so I\'ll default to 6. The die is rolling...')
       print(f"\nDanielGPT: {number}\n")
     elif country.lower() in ['time', 'print', 'letter', 'letters', 'easter egg']:
       print('\nDanielGPT: Okay, we will be printing letters with a time feature. Ready?\n')
@@ -492,6 +508,8 @@ def chatbot():
         choice = input(f"\nDanielGPT: Enter 'y' to try again, or any other key to quit: \n\n{name}: ")
         if choice != 'y':
           print('\nOkay, thanks for trying out the printing letters feature! Back to the countries.\n')
+    elif not country:
+      print('\nDanielGPT: You did not enter anything. Please try again.\n')
     else:
       print("\nDanielGPT: I'm sorry, either that isn\'t a country or you misspelled.\n")
 #except:
