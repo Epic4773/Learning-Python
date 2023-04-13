@@ -39,3 +39,9 @@ def function():
     print(f"The max value is the odd number {maximum}.")
 
 function()
+
+# BONUS:  As it stands, the code above in function() will only return a maximum value if there is one unique maximum.
+# For example, in the case that we input -2, 6 and 9, the function states that 9 is the maximum and that it is odd.
+# However, if we input 3, 11, and 11, the whole function will fail because I have two identical maximum numbers.
+# Can you change your code to handle this scenario? Can you state how many times the maximum occurs? Can you make the function state a mode of the 3 numbers?
+# Be creative for your solution to this problem!
