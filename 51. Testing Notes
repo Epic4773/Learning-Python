@@ -1,0 +1,53 @@
+### main.py will be empty
+
+### The following goes into a seperate file named "name_function.py":
+def get_formatted_name(first, last, middle=''):
+  # Generate a nearly formatted full name.
+  if middle:
+    full_name = f"{first} {middle} {last}"
+  else:
+    full_name = f"{first} {last}"
+  return full_name.title()
+  
+### The following goes into another seperate file named "names.py":
+from name_function import get_formatted_name
+
+print("Enter 'q' at any time to quit.")
+while True:
+  first = input("\nPlease give me a first name: ")
+  if first == 'q':
+    print('\nOk, have a good day!')
+    break
+  last = input("Please give me a last name: ")
+  if last == 'q':
+    print('\nOk, have a good day!')
+    break
+  answer = input('Would you like to add a middle name (y/n)? ')
+  if answer == 'y':
+    middle = input('Please give me a middle name: ')
+    formatted_name = get_formatted_name(first, last, middle)
+  else:
+    formatted_name = get_formatted_name(first, last)
+  print(f"\tNeatly formatted name: {formatted_name}.")
+  
+### The following goes into another seperate file named "test_name_function.py":
+import unittest
+# A Unit Test tests a single case for a program to make sure it works as expected.
+from name_function import get_formatted_name
+
+class NamesTestCase(unittest.TestCase):
+  # Includes test case for our program name_function.py
+  def test_first_last_name(self):
+    # Do names with a first name (like Janis Joplin) work?
+    formatted_name = get_formatted_name('janis','joplin')
+    self.assertEqual(formatted_name, 'Janis Joplin')
+
+def test_first_last_middle_name(self):
+  # Do names like 'Wolfgang Amadeus Mozart' work?
+  formatted_name = get_formatted_name('wolfgang', 'mozart', 'amadeus')
+  self.assertEqual(formatted_name, 'Wolfgang Amadeus Mozart')
+
+if __name__ == '__main__':
+  unittest.main()
+  
+### Now instead of using the console to run the code, use the shell.
