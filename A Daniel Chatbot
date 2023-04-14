@@ -476,42 +476,50 @@ def chatbot():
       print('\nDanielGPT: No info yet, enter another country.\n')
     elif country.lower() in ['zimbabwe', 'republic of zimbabwe']:
       print('\nDanielGPT: No info yet, enter another country.\n')
+    elif country.lower() in ['mookie', 'monkey', 'mozey', 'cat mario']:
+      print(Fore.BLUE + '\nDanielGPT: He\'s pretty funny and cute, yeah.\n' + Fore.RESET)
     elif country.lower() in ['roll', 'dice', 'die']:
-      sides = int(input(f"\nDanielGPT: How many sides do you want the die to have?\n\n{name}: "))
-      number = random.randint(1, sides)
+      try:
+        sides = int(input(f"\nDanielGPT: How many sides do you want the die to have?\n\n{name}: "))
+      except ValueError:
+        print(Fore.YELLOW + '\nDanielGPT: Due to your dangerous command, Mookie the Monkey has ended this program. Feel free to rerun the Chatbot.\n')
       if type(sides) != int:
         print('DanielGPT: That\'s not a number so I\'ll default to 6. The die is rolling...')
+        sides = 6
+      else:
+        number = random.randint(1, sides)
       print(f"\nDanielGPT: {number}\n")
     elif country.lower() in ['time', 'print', 'letter', 'letters', 'easter egg']:
       print('\nDanielGPT: Okay, we will be printing letters with a time feature. Ready?\n')
       input(f"{name}: ")
       while True:
         duration = float(input(f"\nDanielGPT: Enter the number of seconds to print each letter: \n\n{name}: "))
-        case = input(f"\nDanielGPT: Now enter 'u' for uppercase or 'l' for lowercase letters: \n\n{name}: ")
-        if case == 'u':
-          start = ord('A')
-          end = ord('Z')
-          print()
-        elif case == 'l':
-          start = ord('a')
-          end = ord('z')
-          print()
+        if type(duration) != int:
+          print('Due to your dangerous command, Mookie the Monkey has ended this program. Feel free to rerun it.')
         else:
-          print("\nDanielGPT: Invalid input.")
-          continue
-        for i in range(start, end+1):
-          letter = chr(i)
-          sys.stdout.write(letter)
-          sys.stdout.flush()
-          time.sleep(duration)
-        print()
-        choice = input(f"\nDanielGPT: Enter 'y' to try again, or any other key to quit: \n\n{name}: ")
+          case = input(f"\nDanielGPT: Now enter 'u' for uppercase or 'l' for lowercase letters: \n\n{name}: ")
+          print()
+          if case == 'u':
+            start = ord('A')
+            end = ord('Z')
+          elif case == 'l':
+            start = ord('a')
+            end = ord('z')
+          else:
+            print(Fore.RED + "\nDanielGPT: Invalid input." + Fore.RESET)
+            continue
+          for i in range(start, end+1):
+            letter = chr(i)
+            sys.stdout.write(letter)
+            sys.stdout.flush()
+            time.sleep(duration)
+        choice = input(color_code + f"\n\nDanielGPT: Enter 'y' to try again, or any other key to quit:\n\n{name}: ")
         if choice != 'y':
-          print('\nOkay, thanks for trying out the printing letters feature! Back to the countries.\n')
+          print('\nDanielGPT: Okay, thanks for trying out the printing letters feature! Back to the countries.\n')
     elif not country:
-      print('\nDanielGPT: You did not enter anything. Please try again.\n')
+      print(Fore.RED + '\nDanielGPT: You did not enter anything. Please try again.\n' + Fore.RESET + color_code)
     else:
-      print("\nDanielGPT: I'm sorry, either that isn\'t a country or you misspelled.\n")
+      print(Fore.RED + "\nDanielGPT: I'm sorry, either that isn\'t a country or you misspelled.\n" + Fore.RESET + color_code)
 #except:
 #  print('Due to your dangerous command, Mookie the Monkey has ended this program. Feel free to rerun it.')
 
