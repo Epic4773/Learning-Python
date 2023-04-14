@@ -15,28 +15,25 @@ print(' ')
 print('——————————————————————————————')
 print(' ')
 
-# A move theater charges different ticket prices depending on age. If a person is under the age of 3, the ticket is free; if they are between 3 and 12, the ticket is $10; and if they are over age 12, the ticket is $15. Write a while loop that asks the user if they are buying another movie ticket. While the answer is yes, prompt them for the age of the person they are buting the ticket for, and then tell them the cost of their movie ticket. When they are done buying tickets, tell them how many tickets they have bought and tell them the total price (again, keep track of these values in some way!).
+# A movie theater charges different ticket prices depending on age. If a person is under the age of 3, the ticket is free; if they are between 3 and 12, the ticket is $10; and if they are over age 12, the ticket is $15. Write a while loop that asks the user if they are buying another movie ticket. While the answer is yes, prompt them for the age of the person they are buting the ticket for, and then tell them the cost of their movie ticket. When they are done buying tickets, tell them how many tickets they have bought and tell them the total price (again, keep track of these values in some way!).
 tickets = 0
 price = 0
-age_question = ('What is your age? ')
-more = ('Would you like to buy tickets (y/n)? ')
 while True :
-  more = input(more)
-  if more == 'y' :
-    age = int(input(age_question))
-    if age < 3 :
+  ticket_question = input('Would you like to buy tickets (y/n)? ')
+  if ticket_question == 'y' :
+    age_question = int(input('What is your age? '))
+    if age_question < 3 :
       print('Your ticket is free.')
       tickets += 1
       price += 0
-    elif age >= 3 and age <= 12 :
+    elif age_question >= 3 and age_question <= 12 :
       print('Your ticket is $10.')
       tickets += 1
       price += 10
-    elif age > 12 :
+    elif age_question > 12 :
       print('Your ticket is $15.')
       tickets += 1
       price += 15
   else:
+    print(f'\nYour total number of tickets is {tickets}, adding up to ${price}. Thank you!')
     break
-
-print(f'\nYour total number of tickets is {tickets}, adding up to ${price}. Thank you!')
