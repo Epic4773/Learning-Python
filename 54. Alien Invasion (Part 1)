@@ -1,4 +1,5 @@
-# Use the following link to make a seperate file called "settings.py": https://github.com/Epic4773/Learning-Python/blob/main/car.py
+# Use the following link to make a seperate file called "settings.py": https://github.com/Epic4773/Learning-Python/blob/main/settings.py%20(Alien%20Invasion)
+# If you're going to use Replit for this, instead of opening a Python repl template, open a pygame Repl template.
 
 import sys
 import pygame
