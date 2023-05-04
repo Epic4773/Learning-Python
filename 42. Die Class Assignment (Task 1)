@@ -1,5 +1,3 @@
-# Use the following link to make a seperate file called "die.py": https://github.com/Epic4773/Learning-Python/blob/main/die.py
-
 # Original Code:
 # from die import Die
 # die6 = Die(6)
@@ -10,6 +8,7 @@
 # for i in range(10):
 #   die20.roll_die()
 
+### The following goes into "main.py":
 from die import Die
 
 while True:
@@ -42,3 +41,13 @@ while True:
     break
   else:
     print("Invalid input. Please enter '1' or '2'.")
+
+### The following goes into a seperate file named "die.py":
+import random
+
+class Die:
+  def __init__(self, sides):
+    self.sides = sides
+  
+  def roll_die(self):
+    print(random.randint(1, self.sides))
