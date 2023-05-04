@@ -1,4 +1,7 @@
-# Use the following link to make a seperate file called "py_30.txt": https://github.com/Epic4773/Learning-Python/blob/main/py_30.txt
+# Use the following code to make a seperate file called "py_30.txt":
+3.1415926535
+  8979323846
+  2643383279
 # Use the following link to make a seperate file called "pi_million.txt": https://github.com/Epic4773/Learning-Python/blob/main/pi_million.txt
 
 # The with keyword opens a file and then closes it after you are done with the file.
