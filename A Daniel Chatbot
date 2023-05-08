@@ -482,10 +482,14 @@ def chatbot():
       print(Fore.CYAN + '\nDanielGPT: I know, I\'m smart.\n' + Fore.RESET + color_code)
     elif country.lower() in ['animalland', 'animal land', 'al', 'a l', 'mk', 'm k', 'mushroom kingdom', 'beeg mario', 'luigi', 'bowser', 'mushroomkingdom']:
       print(Fore.MAGENTA + '\nDanielGPT: H m m m m m m m mm.\n' + Fore.RESET + color_code)
-    elif country.lower() in ['mookie', 'monkey', 'mozey', 'cat mario']:
+    elif country.lower() in ['mookie', 'monkey', 'mozey', 'cat mario', 'mario', 'bowser', 'goomba']:
       print(Fore.BLUE + '\nDanielGPT: He\'s pretty funny and cute, yeah.\n' + Fore.RESET + color_code)
-    elif country.lower() in ['die']:
+    elif country.lower() in ['daniel', 'kolbin', 'daniel kolbin']:
+      print(Fore.YELLOW + '\nDanielGPT: Yes?\n' + Fore.RESET + color_code)
+    elif country.lower() in ['get a job', 'job', 'no one likes you', 'i hate you', 'stop', 'i love you', 'hate you', 'love you', 'bro', 'bruh']:
       print(Fore.GREEN + '\nDanielGPT: Okay.\n' + Fore.RESET + color_code)
+    elif country.lower() in ['nuke', 'nuclear', 'nuclear bomb', 'bomb', 'knife', 'weapon']:
+      print(Fore.WHITE + '\nDanielGPT: Yes, I have 226 of those.\n' + Fore.RESET + color_code)
     elif country.lower() in ['roll', 'dice', 'die']:
       sides = int(input(f"\nDanielGPT: How many sides do you want the die to have?\n\n{name}: "))
       if type(sides) != int:
@@ -494,11 +498,11 @@ def chatbot():
       else:
         number = random.randint(1, sides)
       print(f"\nDanielGPT: {number}\n")
-    elif country.lower() in ['time', 'print', 'letter', 'letters', 'easter egg']:
+    elif country.lower() in ['time', 'print', 'letter', 'letters']:
       print('\nDanielGPT: Okay, we will be printing letters with a time feature. Ready?\n')
       input(f"{name}: ")
       while True:
-        duration = float(input(f"\nDanielGPT: Enter the number of seconds to print each letter: \n{name}: "))
+        duration = float(input(f"\nDanielGPT: Enter the number of seconds to print each letter: \n\n{name}: "))
         case = input(f"\nDanielGPT: Now enter 'u' for uppercase or 'l' for lowercase letters: \n\n{name}: ")
         print()
         if case == 'u':
@@ -508,7 +512,7 @@ def chatbot():
           start = ord('a')
           end = ord('z')
         else:
-          print(Fore.RED + "\nDanielGPT: Invalid input." + Fore.RESET + color_code)
+          print(Fore.RED + "DanielGPT: Invalid input." + Fore.RESET + color_code)
           continue
         for i in range(start, end+1):
           letter = chr(i)
@@ -523,7 +527,5 @@ def chatbot():
       print(Fore.RED + '\nDanielGPT: You did not enter anything. Please try again.\n' + Fore.RESET + color_code)
     else:
       print(Fore.RED + "\nDanielGPT: I'm sorry, either that isn\'t a country or you misspelled.\n" + Fore.RESET + color_code)
-#except:
-#  print('Due to your dangerous command, Mookie the Monkey has ended this program. Feel free to rerun it.')
 
 chatbot()
