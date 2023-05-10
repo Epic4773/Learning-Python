@@ -10,6 +10,8 @@ import pygame
 from settings import Settings
 from ship import Ship
 
+# Progress: On page 244 as of April 20, 2023
+
 class AlienInvasion:
   """Overall class to manage game assets and behavior."""
   
@@ -29,6 +31,7 @@ class AlienInvasion:
     """Start the main loop for the game."""
     while True:
       self._check_events()
+      self.ship.update()
       self._update_screen()
       self.clock.tick(60)
 
@@ -39,8 +42,24 @@ class AlienInvasion:
         sys.exit()
       elif event.type == pygame.KEYDOWN:
         if event.key == pygame.K_RIGHT:
-          # Move the ship to the right.
-          self.ship.rect.x += 1
+          self.ship.moving_right = True
+      elif event.type == pygame.KEYUP:
+        if event.key == pygame.K_RIGHT:
+          self.ship.moving_right = False
+
+  def _check_keydown_events(self,event):
+    """Respond to keypresses."""
+    if event.key == pygame.K_RIGHT:
+      self.ship.moving_right = True
+    elif event.key == pygame.K_RIGHT:
+      self.ship.moving_left = False
+
+  def _check_keyup_events(self, events):
+    """Respond to keypresses."""
+    if event.key == pygame.K_RIGHT:
+      self.ship.moving_right = False
+    elif event.key == pygame.K_LEFT:
+      self.ship.moving_left = False
 
   def _update_screen(self):
     """Update images on the screen, and flip to the new screen."""
@@ -60,9 +79,12 @@ class Settings:
   def __init__(self):
     """Initialize the game's settings."""
     # Screen settings
-    self.screen_width = 1200
-    self.screen_height = 800
+    self.screen_width = 120
+    self.screen_height = 80
     self.bg_color = (230, 230, 230)
+
+    # Ship settings
+    self.ship_speed = 1.5
 
 ### Make a folder under the "alien_invasion" folder called "images".
 
@@ -77,6 +99,7 @@ class Ship:
   def __init__(self, ai_game):
     """Initialize the ship and set its starting position."""
     self.screen = ai_game.screen
+    self.settings = ai_game.settings
     self.screen_rect = ai_game.screen.get_rect()
     
     # Load the ship image and get its rect.
@@ -86,13 +109,23 @@ class Ship:
     # Start each new ship at the bottom center of the screen.
     self.rect.midbottom = self.screen_rect.midbottom
 
+    # Store a float for the ship's exact horizontal position.
+    self.x = float(self.rect.x)
+
     # Movement flag; start with a ship that's not moving.
     self.moving_right = False
+    self.moving_left = False
     
   def update(self):
     """Update the ship's position based on the movement flag."""
-    if self.moving_right:
-      self.rect.x += 1
+    # Update the ship's x value, not the rect.
+    if self.moving_right and self.rect.right < self.screen_rect.right:
+      self.x += self.settings.ship_speed
+    if self.moving_left and self.rect.left > 0:
+      self.x -= self.settings.ship_speed
+
+    # Update rect object from self.x.
+    self.rect.x = self.x
   
   def blitme(self):
     """Draw the ship at its current location."""
