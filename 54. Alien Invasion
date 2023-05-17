@@ -10,9 +10,9 @@ import pygame
 from settings import Settings
 from ship import Ship
 from bullet import Bullet
-#from alien import Alien
+from alien import Alien
 
-# Progress: On Chapter 13 and Page 258 as of May 16, 2023
+# Progress: On Chapter 13 and Page 259 as of May 17, 2023
 
 class AlienInvasion:
   """Overall class to manage game assets and behavior."""
@@ -20,6 +20,7 @@ class AlienInvasion:
   def __init__(self):
     """Initialize the game, and create game resources."""
     pygame.init()
+    self.clock = pygame.time.Clock()
     self.settings = Settings()
     
     self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
@@ -29,7 +30,9 @@ class AlienInvasion:
     
     self.ship = Ship(self)
     self.bullets = pygame.sprite.Group()
-    self.clock = pygame.time.Clock()
+    self.aliens = pygame.sprite.Group()
+
+    self._create_fleet()
     
   def run_game(self):
     """Start the main loop for the game."""
@@ -48,7 +51,7 @@ class AlienInvasion:
       elif event.type == pygame.KEYDOWN:
         self._check_keydown_events(event)
       elif event.type == pygame.KEYUP:
-        self._check_keyup_events(events)
+        self._check_keyup_events(event)
         
   def _check_keydown_events(self,event):
     """Respond to keypresses."""
@@ -61,7 +64,7 @@ class AlienInvasion:
     elif event.key == pygame.K_SPACE:
       self._fire_bullet()
       
-  def _check_keyup_events(self, events):
+  def _check_keyup_events(self, event):
     """Respond to keypresses."""
     if event.key == pygame.K_RIGHT:
       self.ship.moving_right = False
@@ -83,17 +86,22 @@ class AlienInvasion:
     for bullet in self.bullets.copy():
       if bullet.rect.bottom <= 0:
         self.bullets.remove(bullet)
-        
-    print(len(self.bullets))
   
   def _update_screen(self):
     """Update images on the screen, and flip to the new screen."""
     self.screen.fill(self.settings.bg_color)
     for bullet in self.bullets.sprites():
       bullet.draw_bullet()
-      self.ship.blitme()
+    self.ship.blitme()
+    self.aliens.draw(self.screen)
       
     pygame.display.flip()
+
+  def _create_fleet(self):
+    """Create the fleet of aliens."""
+    # Make an alien.
+    alien = Alien(self)
+    self.aliens.add(alien)
     
 if __name__ == '__main__':
   # Make a game instance, and run the game.
@@ -109,10 +117,10 @@ class Settings:
     self.screen_width = 120
     self.screen_height = 80
     self.bg_color = (230, 230, 230)
-    self.bullets_allowed = 3
+    self.bullets_allowed = 10
     
     # Ship settings
-    self.ship_speed = 1.5
+    self.ship_speed = 2
     
     # Bullet settings
     self.bullet_speed = 4.0
@@ -200,24 +208,26 @@ class Bullet(Sprite):
 ### Upload any alien or enemey spaceship and label it "alien.bmp" under the "images" folder.
 
 ### The following goes into "alien.py" under the "alien_invasion" folder:
-#import pygame
-#from pygame.sprite import Sprite
+import pygame
+from pygame.sprite import Sprite
 
-#class Alien(Sprite):
-#  """A class to represent a single alien in the fleet."""
+class Alien(Sprite):
+  """A class to represent a single alien in the fleet."""
 
-#  def __init__(self, ai_game):
-#    """Initialize the alien and set its starting position."""
-#    super().__init__()
-#    self.screen = ai_game.screen
+  def __init__(self, ai_game):
+    """Initialize the alien and set its starting position."""
+    super().__init__()
+    self.screen = ai_game.screen
 
     # Load the alien image and set its rect attribute.
-#    self.image = pygame.image.load('images/alien.bmp')
-#    self.rect = self.image.get_rect()
+    self.image = pygame.image.load('images/alien.bmp')
+    self.rect = self.image.get_rect()
 
     # Start each new alien near the top left of the screen.
-#    self.rect.x = self.rect.width
-#    self.rect.y = self.rect.height
+    self.rect.x = self.rect.width
+    self.rect.y = self.rect.height
 
     # Store the alien's exact horizontal position.
-#    self.x = float(self.rect.x)
+    self.x = float(self.rect.x)
+
+### Run via shell.
