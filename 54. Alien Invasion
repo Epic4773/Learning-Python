@@ -12,7 +12,7 @@ from ship import Ship
 from bullet import Bullet
 from alien import Alien
 
-# Progress: On Chapter 13 and Page 259 as of May 17, 2023
+# Progress: On Chapter 13 and Page 270 as of May 18, 2023
 
 class AlienInvasion:
   """Overall class to manage game assets and behavior."""
