@@ -9,12 +9,13 @@ from time import sleep
 import pygame
 
 from settings import Settings
+from button import Button
 from game_stats import GameStats
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
 
-# Progress: On Chapter 14 and Page 278 as of May 22, 2023
+# Progress: On Chapter 14 and Page 287 as of May 23, 2023
 
 class AlienInvasion:
   """Overall class to manage game assets and behavior."""
@@ -38,8 +39,11 @@ class AlienInvasion:
 
     self._create_fleet()
 
-    # Start Alien Invasion in an active state.
-    self.game_active = True
+    # Start Alien Invasion in an inactive state.
+    self.game_active = False
+
+    # Make the Play button.
+    self.play_button = Button(self, "Play")
 
   def run_game(self):
     """Start the main loop for the game."""
@@ -63,7 +67,32 @@ class AlienInvasion:
         self._check_keydown_events(event)
       elif event.type == pygame.KEYUP:
         self._check_keyup_events(event)
+      elif event.type == pygame.MOUSEBUTTONDOWN:
+        mouse_pos = pygame.mouse.get_pos()
+        self._check_play_button(mouse_pos)
 
+  def _check_play_button(self, mouse_pos):
+    """Start a new game when the player clicks Play."""
+    button_clicked = self.play_button.rect.collidepoint(mouse_pos)
+    if button_clicked and not self.game_active:
+      # Reset the game settings.
+      self.settings.initialize_dynamic_settings()
+      
+      # Reset the game statistics.
+      self.stats.reset_stats()
+      self.game_active = True
+
+      # Get rid of any remaining bullets and aliens.
+      self.bullets.empty()
+      self.aliens.empty()
+
+      # Create a new fleet and center the ship.
+      self._create_fleet()
+      self.ship.center_ship()
+
+      # Hide the mouse cursor.
+      pygame.mouse.set_visible(False)
+  
   def _check_keydown_events(self, event):
     """Respond to keypresses."""
     if event.key == pygame.K_RIGHT:
@@ -100,7 +129,6 @@ class AlienInvasion:
 
     self._check_bullet_alien_collisions()
     
-
   def _check_bullet_alien_collisions(self):
     """Respond to bullet-alien collisions."""
     # Remove any bullets and aliens that have collided.
@@ -111,6 +139,7 @@ class AlienInvasion:
       # Destroy existing bullets and create new fleet.
       self.bullets.empty()
       self._create_fleet()
+      self.settings.increase_speed()
       
   def _ship_hit(self):
     """Respond to the ship being hit by an alien."""
@@ -130,6 +159,7 @@ class AlienInvasion:
       sleep(0.5)
     else:
       self.game_active = False
+      pygame.mouse.set_visible(True)
           
   def _update_aliens(self):
     """Update the positions of all aliens in the fleet."""
@@ -198,6 +228,10 @@ class AlienInvasion:
     self.ship.blitme()
     self.aliens.draw(self.screen)
 
+    # Draw the play button if the game is inactive.
+    if not self.game_active:
+      self.play_button.draw_button()
+    
     pygame.display.flip()
     
 if __name__ == '__main__':
@@ -210,28 +244,43 @@ class Settings:
   """A class to store all settings for Alien Invasion."""
 
   def __init__(self):
-    """Initialize the game's settings."""
+    """Initialize the game's static settings."""
     # Screen settings
     self.screen_width = 1200
     self.screen_height = 800
     self.bg_color = (230, 230, 230)
 
-    # Ship settings
-    self.ship_speed = 1.5
+    # Ship settings.
     self.ship_limit = 3
 
     # Bullet settings
-    self.bullet_speed = 3
     self.bullet_width = 6
     self.bullet_height = 25
-    self.bullet_color = (69, 61, 38)
+    self.bullet_color = (60, 60, 60)
     self.bullets_allowed = 10
 
-    # Alien settings
-    self.alien_speed = 1.0
+    # Alien settings.
     self.fleet_drop_speed = 10
+
+    # How quickly the game speeds up
+    self.speedup_scale = 1.1
+
+    self.initialize_dynamic_settings()
+
+  def initialize_dynamic_settings(self):
+    """Initialize settings that change throughout the game."""
+    self.ship_speed = 1.5
+    self.bullet_speed = 2.5
+    self.alien_speed = 1.0
+
     # fleet_direction of 1 represents right; -1 represents left.
     self.fleet_direction = 1
+
+  def increase_speed(self):
+    """Increase speed settings."""
+    self.ship_speed *= self.speedup_scale
+    self.bullet_speed *= self.speedup_scale
+    self.alien_speed *= self.speedup_scale
 
 ### Make a folder under the "alien_invasion" folder called "images".
 
@@ -347,10 +396,67 @@ class GameStats:
   def __init__(self, ai_game):
     """Initialize statistics."""
     self.settings = ai_game.settings
-    self.reset_stats
+    self.reset_stats()
 
   def reset_stats(self):
     """Initialize statistics that can change during the game."""
     self.ships_left = self.settings.ship_limit
+    self.score = 0
+
+### The following goes into "button.py" under the "alien_invasion" folder:
+import pygame.font
+
+class Button:
+  """A class to build buttons for the game."""
+
+  def __init__(self, ai_game, msg):
+    """Initialize button attributes."""
+    self.screen = ai_game.screen
+    self.screen_rect = self.screen.get_rect()
+
+    # Set the dimensions and properties of the button.
+    self.width, self.height = 200, 50
+    self.button_color = (0, 135, 0)
+    self.text_color = (255, 255, 255)
+    self.font = pygame.font.SysFont(None, 48)
+
+    # Build the button's rect object and center it.
+    self.rect = pygame.Rect(0, 0, self.width, self.height)
+    self.rect.center = self.screen_rect.center
+
+    # The button message needs to be prepped only once.
+    self._prep_msg(msg)
+
+  def _prep_msg(self, msg):
+    """Turn msg into a rendered image and center text on the bottom."""
+    self.msg_image = self.font.render(msg, True, self.text_color,
+      self.button_color)
+    self.msg_image_rect = self.msg_image.get_rect()
+    self.msg_image_rect.center = self.rect.center
+
+  def draw_button(self):
+    """Draw blank button and then draw message."""
+    self.screen.fill(self.button_color, self.rect)
+    self.screen.blit(self.msg_image, self.msg_image_rect)
+    
+### The following goes into "scoreboard.py" under the "alien_invasion" folder:
+import pygame.font
+
+class Scoreboard:
+  """A class to report scoring information."""
+
+  def __init__(self, ai_game):
+    """Initialize scorekeeping attributes."""
+    self.screen = ai_game.screen
+    self.screen_rect = self.screen.get_rect()
+    self.settings = ai_game.settings
+    self.stats = ai_game.stats
+
+    # Font settings for scoring information.
+    self.text_color = (30, 30, 30)
+    self.font = pygame.font.SysFont(None, 48)
+
+    # Prepare the initial score image.
+    self.prep_score()
 
 ### Run via shell.
