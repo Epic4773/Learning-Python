@@ -572,4 +572,4 @@ class Ship(Sprite):
     """Draw the ship at its current location."""
     self.screen.blit(self.image, self.rect)
 
-### Run via shell by doing "cd alien_invasion" and then "python alien_invasion.py".
+### Run via shell by doing "cd alien_invasion" and then "python alien_invasion.py" (or something like that).
