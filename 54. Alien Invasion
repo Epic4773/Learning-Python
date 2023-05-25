@@ -24,7 +24,7 @@ from alien import Alien
 # Welcome to Daniel K.'s version (or template) of the Python Crash Course Alien Invasion Project.
 
 # Progress: Done with Chapter 12, 13, & 14 as of May 23, 2023
-# What's next: Customization
+# What's next: Maybe some more customizations
 
 class AlienInvasion:
   """Overall class to manage game assets and behavior."""
