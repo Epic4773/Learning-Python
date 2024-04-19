@@ -1,4 +1,4 @@
-# Who in the world makes a chatbot-style program with very bad Python code and calls it "DanielGPT"?
+# Who in the world makes an semi-scrapped chatbot-style program with very bad Python code and calls it "DanielGPT"?
 from colorama import init, Fore, Style
 import random
 import time
