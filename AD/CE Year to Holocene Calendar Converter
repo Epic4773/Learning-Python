@@ -1,0 +1,24 @@
+def ad_to_holocene(ad_year):
+  if ad_year == 0:
+      raise ValueError("\nUm, actually there is no year 0 in the AD/CE system. Rerun the program.")
+  return ad_year + 10000 if ad_year > 0 else ad_year + 10001
+
+def holocene_to_ad(holocene_year):
+  return holocene_year - 10000 if holocene_year >= 10000 else holocene_year - 10001
+
+try:
+  conversion_type = input("Hello!\n\nIf you want to convert from AD/CE to Holocene enter '1' but if you want to convert from Holocene to AD/CE enter '2':\n")
+  if conversion_type not in ['1', '2']:
+      raise ValueError("\nInvalid input. Rerun the program.")
+
+  if conversion_type == '1':
+      ad_year = int(input("\nEnter a year in AD/CE:\n"))
+      holocene_year = ad_to_holocene(ad_year)
+      print(f"\nThe equivalent year in the Holocene calendar is: {holocene_year}\n")
+  else:
+      holocene_year = int(input("\nEnter a year in the Holocene calendar:\n"))
+      ad_year = holocene_to_ad(holocene_year)
+      print(f"\nThe equivalent year in the AD/CE system is: {ad_year}\n")
+
+except ValueError as e:
+  print(e)
