@@ -1,0 +1,17 @@
+import itertools
+
+# Function to rearrange a list of words into all possible combinations
+def rearrange_words(words):
+    # Generate all permutations of the list of words
+    permutations = itertools.permutations(words)
+
+    # Convert each permutation into a list of words and join them into a string
+    result = [''.join(permutation) for permutation in permutations]
+
+    return result
+
+# Example usage
+words = ['AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG', 'HH'] # Feel free to replace, add, or remove the characters/words
+combinations = rearrange_words(words)
+for combination in combinations:
+    print(combination)
